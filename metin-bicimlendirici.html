@@ -88,10 +88,81 @@
             margin-top: 10px;
             margin-bottom: 10px;
         }
+ .app-item {
+            background-color: #fdfdfd;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px; /* Her uygulama öğesi arasında boşluk */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex; /* İçindeki öğeleri hizalamak için flex kullan */
+            flex-direction: column; /* İçerikleri dikey sırala */
+            align-items: flex-start; /* Sol tarafa hizala */
+        }
+        
+        .app-item p {
+            margin-bottom: 15px; /* Açıklama ile buton arasına boşluk */
+            text-align: left; /* Uygulama açıklamalarını sola hizala */
+        }
+
+        .button-link {
+            display: inline-block; /* Metne göre genişlemesini ve satır içi blok olarak davranmasını sağlar */
+            padding: 5px 10px; /* Daha dolgun butonlar */
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px; /* Daha yumuşak köşeler */
+            cursor: pointer;
+            border: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.1em; /* Buton yazısını büyüt */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Hover efekti için yumuşak geçiş */
+            /* width: auto; /* Bu zaten varsayılan davranış, ancak belirtmek faydalı */
+            /* Bu satırı kaldırdığınızda veya auto yaptığınızda, metne göre genişleyecektir. */
+        }
+
+        .button-link:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px); /* Hafif yukarı kalkma efekti */
+        }
+
+        /* Mobil uyumluluk için medya sorguları */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                margin: 20px auto;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            h4 {
+                font-size: 1.1em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .button-link {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }       
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="app-item">
+            <a href="/" class="button-link"><b>&lt;&lt;</b> Ana Sayfa</a> 
+        </div>
         <h1>Facebook Gönderileri İçin Metin Biçimlendirici</h1>
         <p>Bazı özel Türkçe karakterlerde biçimlendirme sorunu görülebilir. Bazı mobil cihazlarda daha fazla görülebilir. PC'lerde kullanabilirsiniz...</p>
         <div>
