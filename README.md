@@ -4,7 +4,7 @@
 - Biçimlendirilmiş metni kopyalayın.
 - Facebook gönderinize yapıştırın.
 - Yayımlayın/Paylaşın. <br> <br>
-[Facebook Gönderileri İçin Metin Biçimlendirici](https://yazilim-netsentez.w3spaces.com/metin-bicimlendirme.html) <br><br>
+[Facebook Gönderileri İçin Metin Biçimlendirici](https://yazilim-netsentez.w3spaces.com/) <br><br>
 **Netsentez** <br>
 **Dr. Nizamettin Kaya** <br>
 [netsentez.com](https://netsentez.com/)
