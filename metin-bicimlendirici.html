@@ -8,21 +8,70 @@
     <title>Facebook Gönderileri İçin Metin Biçimlendirici</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern ve okunaklı bir font */
+            margin: 0; /* Varsayılan marginleri sıfırla */
+            padding: 20px; /* Kenarlardan boşluk bırak */
+            background-color: #eef2f7; /* Açık gri tonlu arka plan */
             color: #333;
+            line-height: 1.6; /* Okunabilirliği artırır */
         }
         .container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            gap: 20px; /* Öğeler arasında boşluk */
+            max-width: 900px; /* Daha geniş bir konteyner */
+            margin: 30px auto; /* Üstte ve altta biraz daha boşluk */
+            padding: 30px; /* İç boşluğu artır */
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px; /* Daha yuvarlak köşeler */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Daha belirgin gölge */
+        }
+        /* Başlıklar için genel stil */
+        h1, h2, h3, h4 {
+            color: #2c3e50; /* Koyu gri ton */
+            margin-top: 0; /* Üst boşluğu sıfırla, container gap ile yönetilecek */
+            margin-bottom: 10px; /* Alt boşluk */
+            text-align: center; /* Başlıkları ortala */
+        }
+
+        h1 {
+            font-size: 2.8em; /* Daha büyük başlık */
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Hafif gölge */
+        }
+
+        h2 {
+            font-size: 2.2em;
+            text-align: left;
+            padding-bottom: 10px;
+            margin-top: 30px; /* Bölümler arasında daha fazla boşluk */
+        }
+
+        h3 {
+            font-size: 1.6em;
+            color: #34495e;
+            text-align: center;
+            font-weight: normal; /* Daha az kalın */
+        }
+
+        h4 {
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 5px; /* Açıklama ile daha yakın */
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 15px; /* Paragraflar arası boşluk */
+            text-align: justify; /* Paragraf metnini yasla */
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)); /* Hafif bir gradyan çizgisi */
+            margin: 30px 0; /* Çizginin üstünde ve altında daha fazla boşluk */
         }
         textarea {
             width: 100%;
@@ -88,8 +137,8 @@
             margin-top: 10px;
             margin-bottom: 10px;
         }
- .app-item {
-            background-color: #fdfdfd;
+        .app-item {
+            background-color: #4d4d4d;
             border: 1px solid #eee;
             border-radius: 8px;
             padding: 20px;
@@ -163,7 +212,7 @@
         <div class="app-item">
             <a href="/" class="button-link"><b>&lt;&lt;</b> Ana Sayfa</a> 
         </div>
-        <h1>Facebook Gönderileri İçin Metin Biçimlendirici</h1>
+        <h2>Facebook Gönderileri İçin Metin Biçimlendirici</h2>
         <p>Bazı özel Türkçe karakterlerde biçimlendirme sorunu görülebilir. Bazı mobil cihazlarda daha fazla görülebilir. PC'lerde kullanabilirsiniz...</p>
         <div>
             <label for="inputText">Biçimlendirmek istediğiniz metni buraya girin:<br></label>
@@ -191,8 +240,8 @@
             <label for="unicodeOutput">Biçimlenmiş  metni buradan alın:</label>
             <textarea id="unicodeOutput" readonly></textarea>
             <button class="copy-button" id="copyButton">Biçimlenmiş Metni Kopyala</button>
-            <h4>Netsentez'in sizlere armağanıdır.<br>Dr. Nizamettin Kaya<br><a href="https://netsentez.com/">netsentez.com</a></h4>
         </div>
+        <p><b>Netsentez'in sizlere armağanıdır.</b><br>Dr. Nizamettin Kaya<br><a href="https://netsentez.com/">netsentez.com</a></p>
     </div>
 
     <script>
