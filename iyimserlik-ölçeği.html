@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="İyimserlik Ölçeği ile kendinizi değerlendirin. 20 ölçek maddesine cevap verin, sonuçları alın.">
+    <meta name="author" content="Dr. Nizamettin Kaya">
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon.ico">
+    <title>İyimserlik Ölçeği</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #eef2f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 2.2em;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            color: #34495e;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        h4 {
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 3px;
+        }
+        .metin-alinent {
+            text-align: center;
+            color:#999898;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+            margin: 30px 0;
+        }
+
+        a.no-change-color:link,
+        a.no-change-color:visited {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a.no-change-color:hover {
+            color: #0056b3;
+        }
+
+        a.no-change-color:active {
+            color: #003e80;
+        }
+
+        .app-item {
+            background-color: #fdfdfd;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .app-item p {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .button-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            cursor: pointer;
+            border: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+
+        .test-section {
+            display: none; /* Varsayılan olarak gizli */
+        }
+
+        .test-section.active {
+            display: block; /* Aktif olanı göster */
+        }
+
+        .question-area {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            min-height: 80px; /* Soruların görülebileceği minimum yükseklik */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .options-area {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .options-area label {
+            background-color: #e2e6ea;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1em;
+            color: #495057;
+        }
+
+        .options-area label:hover {
+            background-color: #d6dbdf;
+        }
+
+        .options-area input[type="radio"] {
+            display: none;
+        }
+
+        .options-area input[type="radio"]:checked + label {
+            background-color: #28a745; /* Seçili olduğunda yeşil */
+            color: white;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .results-area {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background-color: #fdfdfd;
+            display: none; /* Varsayılan olarak gizli */
+            text-align: center;
+        }
+
+        .results-area.active {
+            display: block;
+        }
+
+        .results-textarea {
+            width: 100%;
+            min-height: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1em;
+            box-sizing: border-box; /* Padding'in genişliğe dahil olmasını sağlar */
+            margin-bottom: 15px;
+        }
+
+        .copy-button {
+            background-color: #17a2b8; /* Bilgi rengi */
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background-color: #138496;
+        }
+
+        .restart-button {
+            background-color: #dc3545; /* Tehlike rengi */
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .restart-button:hover {
+            background-color: #c82333;
+        }
+
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                margin: 20px auto;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            h4 {
+                font-size: 1.1em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .button-link {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+            .hero-image {
+                height: 200px;
+            }
+            .options-area {
+                flex-direction: column; /* Mobil cihazlarda seçenekleri alt alta sırala */
+                align-items: center;
+            }
+            .options-area label {
+                width: 80%; /* Seçeneklerin daha geniş olmasını sağlar */
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="test-container">
+
+        <div class="app-item">
+            <a href="index.html" class="button-link"><b>&lt;&lt;</b> Ana Sayfa</a>
+        </div>
+
+        <h1>İyimserlik Ölçeği</h1>
+        <h4>İyimserlik-karamsarlık ve kabullenicilik-dışlayıcılık boyutlarında kendinizi değerlendirin. 20 ölçek maddesine "Her Zaman", "Ara Sıra", "Hiç" seçeneklerinden biriyle cevap verin.</h4>
+        <p>
+            Hiçbir kimlik bilgisi alınmaz, cevaplar kaydedilmez. Testin psikometrik geçerliliği ve güvenilirliği ölçülmemiştir.
+            <br>
+            Bu uygulama, profesyonel ölçek geliştiricileri için yazılım örneği ve bireyler için öz değerlendirme aracıdır. Testi tamamladığınızda sonuçları alacak, isterseniz bu sonuçlar panonuza kopyalanacaktır. Kaynaklar sayfa sonunda listelenmiştir.
+        </p>
+        <h3>Haydi başlayalım...</h3>
+
+        <div id="quiz-section">
+            <div class="question-area" id="question-text"></div>
+            <div class="options-area">
+                <input type="radio" id="option1" name="answer" value="2">
+                <label for="option1">Her Zaman</label>
+                <input type="radio" id="option2" name="answer" value="1">
+                <label for="option2">Ara Sıra</label>
+                <input type="radio" id="option3" name="answer" value="0">
+                <label for="option3">Hiç</label>
+            </div>
+            <div class="navigation-buttons">
+                <button class="button-link" id="prev-button" style="display: none;">&lt;&lt; Geri</button>
+                <button class="button-link" id="next-button">İleri &gt;&gt;</button>
+            </div>
+        </div>
+
+        <div class="results-area" id="results-section">
+            <h2>Değerlendirme Sonuçları</h2>
+            <textarea id="results-textarea" class="results-textarea" readonly></textarea>
+            <button class="copy-button" id="copy-results-button">Panoya Kopyala</button>
+            <button class="restart-button" id="restart-test-button">Testi Yeniden Başlat</button>
+        </div>
+        <hr>
+        <h2>Kaynaklar</h2>
+        <div id="references-section"></div>
+        <hr>
+        <p class="metin-alinent">Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma açıktır. Kaynak kodlarına <a href="https://github.com/netsentez/yazilim" class="no-change-color">GitHub</a> üzerinden ulaşabilirsiniz.</p>
+        <p class="metin-alinent"><a href="https://netsentez.com/" class="no-change-color">netsentez Ana Platform</a></p>
+    </div>
+
+    <script>
+        const questions = [
+            // İyimserlik-Karamsarlık soruları
+            {
+                text: "Gelecek hakkında genellikle olumlu hissederim.",
+                dimension: "optimism",
+                reversed: false
+            },
+            {
+                text: "Her zaman en kötüsüne hazırım.",
+                dimension: "optimism",
+                reversed: true
+            },
+            {
+                text: "Zor zamanlarda bile iyi şeylerin olacağına inanırım.",
+                dimension: "optimism",
+                reversed: false
+            },
+            {
+                text: "Hayatta nadiren şanslıyımdır.",
+                dimension: "optimism",
+                reversed: true
+            },
+            {
+                text: "Genellikle yeni deneyimler için heyecan duyarım.",
+                dimension: "optimism",
+                reversed: false
+            },
+            {
+                text: "Çoğu zaman olayların kötüye gideceğini düşünürüm.",
+                dimension: "optimism",
+                reversed: true
+            },
+            {
+                text: "Hedeflerime ulaşma konusunda kendime güvenirim.",
+                dimension: "optimism",
+                reversed: false
+            },
+            {
+                text: "Başıma iyi şeyler gelse bile, uzun sürmeyeceğini düşünürüm.",
+                dimension: "optimism",
+                reversed: true
+            },
+            {
+                text: "Sorunlar karşısında bile çözümler bulabileceğime inanırım.",
+                dimension: "optimism",
+                reversed: false
+            },
+            {
+                text: "Hayatımda pek çok hayal kırıklığı yaşadım ve daha fazlasını bekliyorum.",
+                dimension: "optimism",
+                reversed: true
+            },
+            // Kabullenicilik-Dışlayıcılık soruları
+            {
+                text: "Kontrol edemediğim durumları kabullenirim.",
+                dimension: "acceptance",
+                reversed: false
+            },
+            {
+                text: "Değiştiremeyeceğim şeylere karşı direncim vardır.",
+                dimension: "acceptance",
+                reversed: true
+            },
+            {
+                text: "Beklenmedik değişikliklere kolayca uyum sağlarım.",
+                dimension: "acceptance",
+                reversed: false
+            },
+            {
+                text: "Bir şeyler istediğim gibi gitmediğinde kendimi çok rahatsız hissederim.",
+                dimension: "acceptance",
+                reversed: true
+            },
+            {
+                text: "Hatalarımı kabul etmekte zorlanmam.",
+                dimension: "acceptance",
+                reversed: false
+            },
+            {
+                text: "Kusurlarım olduğunda kendime karşı çok eleştirel olurum.",
+                dimension: "acceptance",
+                reversed: true
+            },
+            {
+                text: "Hayatta her şeyi mükemmel yapmak zorunda olduğuma inanırım.",
+                dimension: "acceptance",
+                reversed: true
+            },
+            {
+                text: "İnsanların farklılıklarını hoşgörüyle karşılarım.",
+                dimension: "acceptance",
+                reversed: false
+            },
+            {
+                text: "Beni rahatsız eden durumları kabullenmek yerine onlarla savaşmayı tercih ederim.",
+                dimension: "acceptance",
+                reversed: true
+            },
+            {
+                text: "Her şeyin bir nedeni olduğuna ve bazı şeylerin sadece olması gerektiğine inanırım.",
+                dimension: "acceptance",
+                reversed: false
+            }
+        ];
+
+        // APA stilinde örnek referanslar
+        const references = [
+            "Scheier, M. F., Carver, C. S., & Bridges, M. W. (1999). Optimism, pessimism, and psychological well-being. In D. Kahneman, E. Diener, & N. Schwarz (Eds.), *Well-being: The foundations of hedonic psychology* (pp. 189-216). Russell Sage Foundation.",
+            "Carver, C. S., & Scheier, M. F. (2014). *Attention and self-regulation: A control-theory approach to human behavior*. Springer.",
+            "Hayes, S. C., Strosahl, K. D., & Wilson, K. G. (2012). *Acceptance and Commitment Therapy: The process and practice of mindful change* (2nd ed.). Guilford Press.",
+            "Bond, F. W., Hayes, S. C., & Barnes-Holmes, D. (2019). Relational frame theory: A post-Skinnerian functional approach to language and cognition. In J. C. Leslie & M. F. Perone (Eds.), *Handbook of behavior analysis* (pp. 535-562). American Psychological Association."
+        ];
+
+
+        let currentQuestionIndex = 0;
+        let answers = new Array(questions.length).fill(null); // Cevapları saklamak için
+
+        const questionText = document.getElementById('question-text');
+        const options = document.querySelectorAll('input[name="answer"]');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
+        const quizSection = document.getElementById('quiz-section');
+        const resultsSection = document.getElementById('results-section');
+        const resultsTextarea = document.getElementById('results-textarea');
+        const copyResultsButton = document.getElementById('copy-results-button');
+        const restartTestButton = document.getElementById('restart-test-button');
+        const referencesSection = document.getElementById('references-section');
+
+        function loadQuestion() {
+            if (currentQuestionIndex < questions.length) {
+                questionText.textContent = `${currentQuestionIndex + 1}. ${questions[currentQuestionIndex].text}`;
+                // Önceki cevabı işaretle
+                const savedAnswer = answers[currentQuestionIndex];
+                options.forEach(option => {
+                    option.checked = (savedAnswer !== null && parseInt(option.value) === savedAnswer);
+                });
+
+                prevButton.style.display = currentQuestionIndex > 0 ? 'inline-block' : 'none';
+                nextButton.textContent = currentQuestionIndex === questions.length - 1 ? 'Testi Bitir' : 'İleri >>';
+            } else {
+                showResults();
+            }
+        }
+
+        function saveAnswer() {
+            let selectedValue = null;
+            options.forEach(option => {
+                if (option.checked) {
+                    selectedValue = parseInt(option.value);
+                }
+            });
+            answers[currentQuestionIndex] = selectedValue;
+        }
+
+        function nextQuestion() {
+            saveAnswer(); // Mevcut sorunun cevabını kaydet
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function prevQuestion() {
+            saveAnswer(); // Mevcut sorunun cevabını kaydet
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+            }
+        }
+
+        function calculateResults() {
+            let optimismScore = 0;
+            let acceptanceScore = 0;
+
+            for (let i = 0; i < questions.length; i++) {
+                const question = questions[i];
+                const answer = answers[i];
+
+                if (answer === null) continue; // Cevaplanmamış soruları atla
+
+                let scoreToAdd = answer; // 'Her Zaman': 2, 'Ara Sıra': 1, 'Hiç': 0
+
+                // Ters puanlanan sorular için puanı tersine çevir
+                if (question.reversed) {
+                    scoreToAdd = 2 - answer; // 0 -> 2, 1 -> 1, 2 -> 0
+                }
+
+                if (question.dimension === "optimism") {
+                    optimismScore += scoreToAdd;
+                } else if (question.dimension === "acceptance") {
+                    acceptanceScore += scoreToAdd;
+                }
+            }
+            return { optimismScore, acceptanceScore };
+        }
+
+        function getOptimismEvaluation(score) {
+            // İyimserlik ölçeği 0-20 puan arasında.
+            // 0-6: Yüksek karamsarlık
+            // 7-13: Orta düzeyde iyimser/karamsar
+            // 14-20: Yüksek iyimserlik
+            if (score <= 6) {
+                return `**İyimserlik:** Puanınız ${score}. Yüksek düzeyde karamsarlığa sahip olabilirsiniz. Genellikle olayların olumsuz yönlerini görmeye eğilimlisiniz. Bu durum, yeni fırsatları kaçırmanıza veya zorluklarla başa çıkmakta daha fazla zorlanmanıza neden olabilir. Geleceğe dair beklentilerinizde daha gerçekçi ve yapıcı yaklaşımlar geliştirmek faydalı olabilir.`;
+            } else if (score <= 13) {
+                return `**İyimserlik:** Puanınız ${score}. Orta düzeyde bir iyimserlik/karamsarlık dengesine sahipsiniz. Hem olumlu hem de olumsuz yönleri görebiliyorsunuz. Belirli durumlara veya ruh halinize göre iyimser ya da karamsar düşünebilirsiniz. İyimserliği artırıcı düşünce teknikleri ve stratejileri geliştirmek, genel refahınızı yükseltebilir.`;
+            } else {
+                return `**İyimserlik:** Puanınız ${score}. Yüksek düzeyde iyimserliğe sahipsiniz. Genellikle hayata olumlu bir bakış açısıyla yaklaşıyorsunuz ve geleceğe umutla bakıyorsunuz. Bu durum, zorluklarla başa çıkmada daha dirençli olmanıza ve fırsatları daha iyi değerlendirmenize yardımcı olabilir. Bu olumlu bakış açınızı sürdürmek, genel yaşam memnuniyetinize katkıda bulunacaktır.`;
+            }
+        }
+
+        function getAcceptanceEvaluation(score) {
+            // Kabullenicilik ölçeği 0-20 puan arasında.
+            // 0-6: Yüksek dışlayıcılık/düşük kabullenicilik
+            // 7-13: Orta düzeyde kabullenicilik
+            // 14-20: Yüksek kabullenicilik
+            if (score <= 6) {
+                return `**Kabullenicilik:** Puanınız ${score}. Düşük kabullenicilik eğilimindesiniz. Değiştiremeyeceğiniz durumları kabullenmekte zorlanabilir, direnç gösterebilir veya mükemmeliyetçi bir yaklaşıma sahip olabilirsiniz. Bu durum stres ve hayal kırıklığına yol açabilir. Kabullenme ve farkındalık temelli stratejiler üzerinde çalışmak, içsel huzurunuzu artırabilir.`;
+            } else if (score <= 13) {
+                return `**Kabullenicilik:** Puanınız ${score}. Orta düzeyde bir kabullenicilik eğilimine sahipsiniz. Bazı durumları kolayca kabullenirken, bazılarına karşı direnç gösterebilirsiniz. Duruma ve kişisel algınıza göre değişen bir esnekliğiniz var. Kabullenme pratiklerini günlük yaşamınıza daha fazla dahil etmek, zorlayıcı durumlarla başa çıkma becerinizi geliştirebilir.`;
+            } else {
+                return `**Kabullenicilik:** Puanınız ${score}. Yüksek düzeyde kabulleniciliğe sahipsiniz. Hayatın belirsizliklerini ve kontrol dışı durumları esneklikle karşılayabiliyorsunuz. Hatalarınızı ve kusurlarınızı hoşgörüyle kabul etme eğilimindesiniz. Bu durum, içsel huzurunuzu ve duygusal dayanıklılığınızı artırır. Kabullenici tutumunuz, zorluklar karşısında daha sakin ve dengeli kalmanıza yardımcı olacaktır.`;
+            }
+        }
+
+
+        function showResults() {
+            quizSection.style.display = 'none';
+            resultsSection.classList.add('active');
+
+            const { optimismScore, acceptanceScore } = calculateResults();
+
+            let resultsContent = `Değerlendirme Sonuçlarınız:\n\n`;
+            resultsContent += getOptimismEvaluation(optimismScore) + "\n\n";
+            resultsContent += getAcceptanceEvaluation(acceptanceScore) + "\n\n";
+            resultsContent += `Toplam İyimserlik Puanı: ${optimismScore}/20\n`;
+            resultsContent += `Toplam Kabullenicilik Puanı: ${acceptanceScore}/20\n\n`;
+            resultsContent += "Unutmayın ki bu bir öz değerlendirme aracıdır ve profesyonel bir teşhis aracı değildir. Daha fazla bilgi veya destek için bir uzmana danışmanız önerilir.";
+
+            resultsTextarea.value = resultsContent;
+        }
+
+        function restartTest() {
+            currentQuestionIndex = 0;
+            answers = new Array(questions.length).fill(null);
+            quizSection.style.display = 'block';
+            resultsSection.classList.remove('active');
+            loadQuestion();
+            options.forEach(option => option.checked = false); // Seçenekleri temizle
+        }
+
+        function copyResultsToClipboard() {
+            resultsTextarea.select();
+            resultsTextarea.setSelectionRange(0, 99999); // Mobil cihazlar için
+            document.execCommand("copy");
+            alert("Sonuçlar panoya kopyalandı!");
+        }
+
+        function displayReferences() {
+            const ul = document.createElement('ul');
+            references.forEach(ref => {
+                const li = document.createElement('li');
+                li.textContent = ref;
+                ul.appendChild(li);
+            });
+            referencesSection.appendChild(ul);
+        }
+
+        // Event Listeners
+        nextButton.addEventListener('click', nextQuestion);
+        prevButton.addEventListener('click', prevQuestion);
+        copyResultsButton.addEventListener('click', copyResultsToClipboard);
+        restartTestButton.addEventListener('click', restartTest);
+
+        // Başlangıçta ilk soruyu yükle ve referansları göster
+        loadQuestion();
+        displayReferences();
+    </script>
+
+</body>
+</html>
