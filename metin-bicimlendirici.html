@@ -105,6 +105,12 @@
             margin: 30px 0;
             /* Çizginin üstünde ve altında daha fazla boşluk */
         }
+        /* Sadece .no-change-color sınıfına sahip linkler için */
+        a.no-change-color:link,
+        a.no-change-color:visited {
+            color: #007bff; /* Örneğin, mavi tonu. İstediğiniz rengi buraya yazın. */
+            text-decoration: none; /* İsteğe bağlı: Alt çizgiyi kaldırır */
+        }
 
         textarea {
             width: 100%;
@@ -306,7 +312,10 @@
             <button class="copy-button" id="copyButton">Biçimlenmiş Metni Kopyala</button>
         </div>
         <p><b>Netsentez'in sizlere armağanıdır.</b><br>Dr. Nizamettin Kaya<br><a
-                href="https://netsentez.com/">netsentez.com</a></p>
+                href="https://netsentez.com/" class="no-change-color">netsentez.com</a></p>
+
+        <p style="text-align: center; color: #777;">Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma açıktır. Kaynak kodlarına <a href="https://github.com/netsentez/yazilim" class="no-change-color">GitHub</a> üzerinden ulaşabilirsiniz.</p>
+        <p style="text-align: center; color: #777;"><a href="https://netsentez.com/" class="no-change-color">netsentez Ana Platform</a></p>
     </div>
 
     <script>
