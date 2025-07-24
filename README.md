@@ -11,7 +11,7 @@ Dr. Nizamettin Kaya tarafından geliştirilen basit web uygulamaları ve araçla
 - Biçimlendirin: Koyu, Eğik, Koyu+Eğik.
 - Biçimlendirilmiş metni kopyalayın.
 - Facebook gönderinize yapıştırın.
-- Yayımlayın/Paylaşın.<br>
+- Yayımlayın/Paylaşın.<br><br>
 
 **Netsentez**<br>
 **Dr. Nizamettin Kaya**<br>
