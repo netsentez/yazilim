@@ -1,4 +1,4 @@
-## netsentez Yazılım 
+# netsentez Yazılım 
 Dr. Nizamettin Kaya tarafından geliştirilen basit web uygulamaları ve araçları.<br>
 [netsentez.codes](https://netsentez.codes/)
 
