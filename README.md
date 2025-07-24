@@ -8,8 +8,8 @@ Dr. Nizamettin Kaya tarafından geliştirilen basit web uygulamaları ve araçla
 - Biçimlendirilmiş metni kopyalayın.
 - Facebook gönderinize yapıştırın.
 - Yayımlayın/Paylaşın.<br>
-[Facebook Gönderileri İçin Metin Biçimlendirici](https://netsentez.codes/metin-bicimlendirici.html/) <br>
-**Netsentez**
-**Dr. Nizamettin Kaya**
+[Facebook Gönderileri İçin Metin Biçimlendirici](https://netsentez.codes/metin-bicimlendirici.html/) <br><br>
+**Netsentez**<br>
+**Dr. Nizamettin Kaya**<br>
 [netsentez Ana Platform](https://netsentez.com/)
   
