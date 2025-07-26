@@ -1,6 +1,6 @@
 # netsentez Yazılım 
-Dr. Nizamettin Kaya tarafından geliştirilen basit web uygulamaları ve araçları.
- [netsentez.codes](https://netsentez.codes/)
+Dr. Nizamettin Kaya tarafından geliştirilen basit web uygulamaları ve araçları.  
+[netsentez.codes](https://netsentez.codes/)
 
 ### Olumlu Telkinler Yağmuru
 Olumlu telkinler (olumlamalar/affirmations) bizi daha mutlu, daha başarılı, daha üretken, daha güvenli, daha dayanıklı hâle getirir. Bu araç, size bir olumlamalar yağmuru sunuyor. Kendinize güzel bakın...
@@ -14,6 +14,6 @@ Olumlu telkinler (olumlamalar/affirmations) bizi daha mutlu, daha başarılı, d
 - Yayımlayın/Paylaşın.
 
 **Netsentez**
-**Dr. Nizamettin Kaya**
- [netsentez Ana Platform](https://netsentez.com/)
+**Dr. Nizamettin Kaya**  
+[netsentez Ana Platform](https://netsentez.com/)
   
