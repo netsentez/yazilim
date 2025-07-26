@@ -1,5 +1,6 @@
 # netsentez Yazılım 
 Dr. Nizamettin Kaya tarafından geliştirilen basit web uygulamaları ve araçları.
+
 [netsentez.codes](https://netsentez.codes/)
 
 ### İyimserlik Ölçeği 
@@ -13,5 +14,6 @@ Dr. Nizamettin Kaya tarafından geliştirilen basit web uygulamaları ve araçla
 
 **Netsentez**
 **Dr. Nizamettin Kaya**
+
 [netsentez Ana Platform](https://netsentez.com/)
   
