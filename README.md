@@ -13,7 +13,7 @@ Olumlu telkinler (olumlamalar/affirmations) bizi daha mutlu, daha başarılı, d
 - Facebook gönderinize yapıştırın.
 - Yayımlayın/Paylaşın.
 
-**Netsentez**
+**Netsentez**  
 **Dr. Nizamettin Kaya**  
 [netsentez Ana Platform](https://netsentez.com/)
   
