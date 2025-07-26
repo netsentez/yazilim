@@ -2,6 +2,7 @@
 Dr. Nizamettin Kaya tarafından geliştirilen basit web uygulamaları ve araçları.  
 [netsentez.codes](https://netsentez.codes/)
 
+## 2025
 ### Olumlu Telkinler Yağmuru
 Olumlu telkinler (olumlamalar/affirmations) bizi daha mutlu, daha başarılı, daha üretken, daha güvenli, daha dayanıklı hâle getirir. Bu araç, size bir olumlamalar yağmuru sunuyor. Kendinize güzel bakın...
 ### İyimserlik Ölçeği 
