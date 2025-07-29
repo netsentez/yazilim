@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,111 +10,154 @@
     <title>netsentez Yazılım</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern ve okunaklı bir font */
-            margin: 0; /* Varsayılan marginleri sıfırla */
-            padding: 20px; /* Kenarlardan boşluk bırak */
-            background-color: #eef2f7; /* Açık gri tonlu arka plan */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Modern ve okunaklı bir font */
+            margin: 0;
+            /* Varsayılan marginleri sıfırla */
+            padding: 20px;
+            /* Kenarlardan boşluk bırak */
+            background-color: #eef2f7;
+            /* Açık gri tonlu arka plan */
             color: #333;
-            line-height: 1.6; /* Okunabilirliği artırır */
+            line-height: 1.6;
+            /* Okunabilirliği artırır */
         }
 
         .container {
             display: flex;
             flex-direction: column;
-            max-width: 900px; /* Daha geniş bir konteyner */
-            margin: 30px auto; /* Üstte ve altta biraz daha boşluk */
-            padding: 30px; /* İç boşluğu artır */
+            max-width: 900px;
+            /* Daha geniş bir konteyner */
+            margin: 30px auto;
+            /* Üstte ve altta biraz daha boşluk */
+            padding: 30px;
+            /* İç boşluğu artır */
             background-color: #fff;
-            border-radius: 10px; /* Daha yuvarlak köşeler */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Daha belirgin gölge */
+            border-radius: 10px;
+            /* Daha yuvarlak köşeler */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            /* Daha belirgin gölge */
         }
 
         .hero-section {
             width: 100%;
-            overflow: hidden; /* Taşmayı engeller */
-            margin-bottom: 30px; /* Konteyner ile arasında boşluk bırakır */
-            border-radius: 10px; /* Konteyner ile uyumlu köşe yuvarlaklığı */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Konteyner ile uyumlu gölge */
+            overflow: hidden;
+            /* Taşmayı engeller */
+            margin-bottom: 30px;
+            /* Konteyner ile arasında boşluk bırakır */
+            border-radius: 10px;
+            /* Konteyner ile uyumlu köşe yuvarlaklığı */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            /* Konteyner ile uyumlu gölge */
         }
 
         .hero-image {
-            width: 100%; /* Kapsayıcı genişliğine yayılır */
-            height: 300px; /* Sabit bir yükseklik verilebilir */
-            object-fit: cover; /* Görüntünün en boy oranını koruyarak alanı doldurur */
-            display: block; /* Altındaki boşluğu engeller */
+            width: 100%;
+            /* Kapsayıcı genişliğine yayılır */
+            height: 300px;
+            /* Sabit bir yükseklik verilebilir */
+            object-fit: cover;
+            /* Görüntünün en boy oranını koruyarak alanı doldurur */
+            display: block;
+            /* Altındaki boşluğu engeller */
         }
-        
+
         /* Başlıklar için genel stil */
-        h1, h2, h3, h4 {
-            color: #2c3e50; /* Koyu gri ton */
-            margin-top: 0; /* Üst boşluğu sıfırla, container gap ile yönetilecek */
-            margin-bottom: 10px; /* Alt boşluk */
-            text-align: center; /* Başlıkları ortala */
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #2c3e50;
+            /* Koyu gri ton */
+            margin-top: 0;
+            /* Üst boşluğu sıfırla, container gap ile yönetilecek */
+            margin-bottom: 10px;
+            /* Alt boşluk */
+            text-align: center;
+            /* Başlıkları ortala */
         }
 
         h1 {
-            font-size: 2.8em; /* Daha büyük başlık */
+            font-size: 2.8em;
+            /* Daha büyük başlık */
             margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Hafif gölge */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+            /* Hafif gölge */
         }
 
         h2 {
             font-size: 2.2em;
-            border-bottom: 2px solid #aec6d9; /* Alt çizgi */
+            border-bottom: 2px solid #aec6d9;
+            /* Alt çizgi */
             padding-bottom: 10px;
-            margin-top: 30px; /* Bölümler arasında daha fazla boşluk */
+            margin-top: 30px;
+            /* Bölümler arasında daha fazla boşluk */
         }
 
         h3 {
             font-size: 1.6em;
             color: #34495e;
             text-align: center;
-            font-weight: normal; /* Daha az kalın */
+            font-weight: normal;
+            /* Daha az kalın */
         }
 
         h4 {
             font-size: 1.3em;
             color: #555;
-            margin-bottom: 5px; /* Açıklama ile daha yakın */
+            margin-bottom: 5px;
+            /* Açıklama ile daha yakın */
             text-align: left;
         }
 
         p {
             font-size: 1.1em;
             color: #666;
-            margin-bottom: 15px; /* Paragraflar arası boşluk */
-            text-align: left; /* Paragraf metnini yasla */
-            margin-top: 0; /* Üst boşluğu sıfırla */
+            margin-bottom: 15px;
+            /* Paragraflar arası boşluk */
+            text-align: left;
+            /* Paragraf metnini yasla */
+            margin-top: 0;
+            /* Üst boşluğu sıfırla */
             margin-bottom: 3px;
         }
+
         .metin-alinent {
             text-align: center;
             color: #777;
-            margin-top: 0; /* Üst boşluğu sıfırla */
-            margin-bottom: 3px; /* Alt boşluk */
+            margin-top: 0;
+            /* Üst boşluğu sıfırla */
+            margin-bottom: 3px;
+            /* Alt boşluk */
         }
 
         hr {
             border: 0;
             height: 1px;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)); /* Hafif bir gradyan çizgisi */
-            margin: 30px 0; /* Çizginin üstünde ve altında daha fazla boşluk */
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+            /* Hafif bir gradyan çizgisi */
+            margin: 30px 0;
+            /* Çizginin üstünde ve altında daha fazla boşluk */
         }
- 
+
         /* Sadece .no-change-color sınıfına sahip linkler için */
         a.no-change-color:link,
         a.no-change-color:visited {
-            color: #007bff; /* Örneğin, mavi tonu. İstediğiniz rengi buraya yazın. */
-            text-decoration: none; /* İsteğe bağlı: Alt çizgiyi kaldırır */
+            color: #007bff;
+            /* Örneğin, mavi tonu. İstediğiniz rengi buraya yazın. */
+            text-decoration: none;
+            /* İsteğe bağlı: Alt çizgiyi kaldırır */
         }
 
         /* Normal hover (fare üzerine gelme) ve active (tıklanma) durumları */
         a.no-change-color:hover {
-            color: #0056b3; /* Hover rengi (biraz daha koyu mavi) */
+            color: #0056b3;
+            /* Hover rengi (biraz daha koyu mavi) */
         }
 
         a.no-change-color:active {
-            color: #003e80; /* Active rengi (daha da koyu mavi) */
+            color: #003e80;
+            /* Active rengi (daha da koyu mavi) */
         }
 
         .app-item {
@@ -121,31 +165,42 @@
             border: 1px solid #eee;
             border-radius: 8px;
             padding: 20px;
-            margin-bottom: 20px; /* Her uygulama öğesi arasında boşluk */
+            margin-bottom: 20px;
+            /* Her uygulama öğesi arasında boşluk */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            display: flex; /* İçindeki öğeleri hizalamak için flex kullan */
-            flex-direction: column; /* İçerikleri dikey sırala */
-            align-items: flex-start; /* Sol tarafa hizala */
+            display: flex;
+            /* İçindeki öğeleri hizalamak için flex kullan */
+            flex-direction: column;
+            /* İçerikleri dikey sırala */
+            align-items: flex-start;
+            /* Sol tarafa hizala */
         }
-        
+
         .app-item p {
-            margin-bottom: 15px; /* Açıklama ile buton arasına boşluk */
-            text-align: left; /* Uygulama açıklamalarını sola hizala */
+            margin-bottom: 15px;
+            /* Açıklama ile buton arasına boşluk */
+            text-align: left;
+            /* Uygulama açıklamalarını sola hizala */
         }
 
         .button-link {
-            display: inline-block; /* Metne göre genişlemesini ve satır içi blok olarak davranmasını sağlar */
-            padding: 12px 25px; /* Daha dolgun butonlar */
+            display: inline-block;
+            /* Metne göre genişlemesini ve satır içi blok olarak davranmasını sağlar */
+            padding: 12px 25px;
+            /* Daha dolgun butonlar */
             background-color: #007bff;
             color: white;
             text-align: center;
             text-decoration: none;
-            border-radius: 6px; /* Daha yumuşak köşeler */
+            border-radius: 6px;
+            /* Daha yumuşak köşeler */
             cursor: pointer;
             border: none;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 1.1em; /* Buton yazısını büyüt */
-            transition: background-color 0.3s ease, transform 0.2s ease; /* Hover efekti için yumuşak geçiş */
+            font-size: 1.1em;
+            /* Buton yazısını büyüt */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            /* Hover efekti için yumuşak geçiş */
             /* width: auto; /* Bu zaten varsayılan davranış, ancak belirtmek faydalı */
             /* Bu satırı kaldırdığınızda veya auto yaptığınızda, metne göre genişleyecektir. */
         }
@@ -159,38 +214,48 @@
             body {
                 padding: 10px;
             }
+
             .container {
                 margin: 20px auto;
                 padding: 20px;
             }
+
             h1 {
                 font-size: 2.2em;
             }
+
             h2 {
                 font-size: 1.8em;
             }
+
             h3 {
                 font-size: 1.4em;
             }
+
             h4 {
                 font-size: 1.1em;
             }
+
             p {
                 font-size: 1em;
             }
+
             .button-link {
                 padding: 10px 20px;
                 font-size: 1em;
             }
+
             .hero-image {
-                height: 200px; /* Daha küçük ekranlarda daha az yükseklik */
+                height: 200px;
+                /* Daha küçük ekranlarda daha az yükseklik */
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        
+
         <header class="hero-section">
             <img src="images/kapak-ana-sayfa.jpeg" alt="Yazılım Uygulamaları Kapak Görseli" class="hero-image">
         </header>
@@ -200,32 +265,36 @@
 
         <h1>netsentez Yazılım</h1>
         <h3>Dr. Nizamettin Kaya tarafından geliştirilen basit web uygulamaları ve araçları.</h3>
-        
+
         <hr>
         <div class="app-item">
             <h4>Olumlu Telkinler Yağmuru</h4>
-            <p>Olumlu telkinler (olumlamalar/affirmations) bizi daha mutlu, daha başarılı, daha üretken, daha güvenli, daha dayanıklı hâle getirir. Bu araç, size bir olumlamalar yağmuru sunuyor. Haydi izleyelim...</p>
-            <a href="2025/olumlamalar-yagmuru.html" class="button-link">Git</a> 
+            <p>Olumlu telkinler (olumlamalar/affirmations) bizi daha mutlu, daha başarılı, daha üretken, daha güvenli,
+                daha dayanıklı hâle getirir. Bu araç, size bir olumlamalar yağmuru sunuyor. Haydi izleyelim...</p>
+            <a href="2025/olumlamalar-yagmuru.html" class="button-link">Git</a>
         </div>
 
         <div class="app-item">
             <h4>İyimserlik Ölçeği</h4>
-            <p>İyimserlik-karamsarlık ve kabullenicilik-dışlayıcılık boyutlarında kendinizi değerlendirin. 20 ölçek maddesine "Her Zaman", "Ara Sıra", "Hiç" seçeneklerinden biriyle cevap verin. Sonuçları alın.</p>
-            <a href="2025/iyimserlik-olcegi.html" class="button-link">Git</a> 
+            <p>İyimserlik-karamsarlık ve kabullenicilik-dışlayıcılık boyutlarında kendinizi değerlendirin. 20 ölçek
+                maddesine "Her Zaman", "Ara Sıra", "Hiç" seçeneklerinden biriyle cevap verin. Sonuçları alın.</p>
+            <a href="2025/iyimserlik-olcegi.html" class="button-link">Git</a>
         </div>
 
         <div class="app-item">
             <h4>Facebook Gönderileri için Metin Biçimlendirici</h4>
-            <p>Koyu, Eğik, Koyu+Eğik biçimlendirici. Metni girin, biçimlendirin, alın, gönderinize yapıştırın, paylaşın.</p>
-            <a href="2025/metin-bicimlendirici.html" class="button-link">Git</a> 
+            <p>Koyu, Eğik, Koyu+Eğik biçimlendirici. Metni girin, biçimlendirin, alın, gönderinize yapıştırın, paylaşın.
+            </p>
+            <a href="2025/metin-bicimlendirici.html" class="button-link">Git</a>
         </div>
         <hr>
         <h3>Daha fazla uygulama zamanla eklenecektir.</h3>
-        
-        <p class="metin-alinent">Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma uygundur. Kaynak kodlarına <a href="https://github.com/netsentez/yazilim" class="no-change-color">GitHub</a> üzerinden ulaşabilirsiniz.</p>
-        <p class="metin-alinent"><a href="https://netsentez.com/" class="no-change-color">netsentez Ana Platform</a></p>
-        <br
 
-    </div>
+        <p class="metin-alinent">Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma uygundur. Kaynak
+            kodlarına <a href="https://github.com/netsentez/yazilim" class="no-change-color">GitHub</a> üzerinden
+            ulaşabilirsiniz.</p>
+        <p class="metin-alinent"><a href="https://netsentez.com/" class="no-change-color">netsentez Ana Platform</a></p>
+        <br </div>
 </body>
+
 </html>

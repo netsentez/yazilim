@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +30,10 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             color: #2c3e50;
             margin-top: 0;
             margin-bottom: 10px;
@@ -39,7 +43,7 @@
         h1 {
             font-size: 2.8em;
             margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
         }
 
         h2 {
@@ -64,14 +68,18 @@
         p {
             font-size: 1.1em;
             color: #666;
-            margin-top: 0; /* Üst boşluğu sıfırla */
+            margin-top: 0;
+            /* Üst boşluğu sıfırla */
             margin-bottom: 3px;
         }
+
         .metin-alinent {
             text-align: center;
-            color:#777;
-            margin-top: 0; /* Üst boşluğu sıfırla */
-            margin-bottom: 3px; /* Alt boşluk */
+            color: #777;
+            margin-top: 0;
+            /* Üst boşluğu sıfırla */
+            margin-bottom: 3px;
+            /* Alt boşluk */
         }
 
         hr {
@@ -133,15 +141,18 @@
 
         /* Affirmation Specific Styles */
         #affirmation-display {
-            min-height: 100px; /* Ensures space for longer affirmations */
+            min-height: 100px;
+            /* Ensures space for longer affirmations */
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             font-size: 1.6em;
             font-weight: bold;
-            color: #4CAF50; /* A pleasant green */
-            background-color: #e8f5e9; /* Light green background */
+            color: #4CAF50;
+            /* A pleasant green */
+            background-color: #e8f5e9;
+            /* Light green background */
             border-radius: 10px;
             padding: 25px;
             margin-bottom: 30px;
@@ -175,7 +186,8 @@
         }
 
         #get-affirmation-btn {
-            background-color: #28a745; /* Green */
+            background-color: #28a745;
+            /* Green */
         }
 
         #get-affirmation-btn:hover {
@@ -184,7 +196,8 @@
         }
 
         #stop-affirmation-btn {
-            background-color: #dc3545; /* Red */
+            background-color: #dc3545;
+            /* Red */
         }
 
         #stop-affirmation-btn:hover {
@@ -196,37 +209,47 @@
             body {
                 padding: 10px;
             }
+
             .container {
                 margin: 20px auto;
                 padding: 20px;
             }
+
             h1 {
                 font-size: 2.2em;
             }
+
             h2 {
                 font-size: 1.8em;
             }
+
             h3 {
                 font-size: 1.4em;
             }
+
             h4 {
                 font-size: 1.1em;
             }
+
             p {
                 font-size: 1em;
             }
+
             .button-link {
                 padding: 10px 20px;
                 font-size: 1em;
             }
+
             #affirmation-display {
                 font-size: 1.3em;
                 padding: 15px;
             }
+
             .affirmation-button {
                 padding: 12px 20px;
                 font-size: 1em;
             }
+
             .affirmation-controls {
                 flex-direction: column;
                 align-items: center;
@@ -234,6 +257,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
 
@@ -243,18 +267,21 @@
 
         <h1>Olumlu Telkinler Yağmuru</h1>
         <h4>Kendinize, kendiniz hakkında güzel şeyler söyleyin. Güzelleşeceksiniz...</h4>
-        <hr>        
+        <hr>
         <p>
-            Düşüncelerimiz daima ben diliyle kendimize yönelik olumlu veya olumsuz yorumlar yapar, yargılarda bulunur. Bunlar, "Her zaman başarıyorum" veya "Asla başaramıyorum" gibi ifadelerle bilinçaltımıza kazınan telkinlerdir. Onlar, kendini gerçekleştiren kehanetlere dönüşüp kişiliğimizi oluşturur.
+            Düşüncelerimiz daima ben diliyle kendimize yönelik olumlu veya olumsuz yorumlar yapar, yargılarda bulunur.
+            Bunlar, "Her zaman başarıyorum" veya "Asla başaramıyorum" gibi ifadelerle bilinçaltımıza kazınan
+            telkinlerdir. Onlar, kendini gerçekleştiren kehanetlere dönüşüp kişiliğimizi oluşturur.
         </p>
         <p>
-            Olumlu telkinler (olumlamalar/affirmations) bizi daha mutlu, daha başarılı, daha üretken, daha güvenli, daha dayanıklı hâle getirir. Bu araç, size bir olumlamalar yağmuru sunuyor. Kendinize güzel bakın...
+            Olumlu telkinler (olumlamalar/affirmations) bizi daha mutlu, daha başarılı, daha üretken, daha güvenli, daha
+            dayanıklı hâle getirir. Bu araç, size bir olumlamalar yağmuru sunuyor. Kendinize güzel bakın...
         </p>
         <br>
         <h3>Haydi izleyelim...</h3>
-        
+
         <div id="affirmation-display">
-            </div>
+        </div>
 
         <div class="affirmation-controls">
             <button id="get-affirmation-btn" class="affirmation-button">
@@ -265,196 +292,198 @@
             </button>
         </div>
 
-        <hr>        
-        <p class="metin-alinent">Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma uygundur. Kaynak kodlarına <a href="https://github.com/netsentez/yazilim" class="no-change-color">GitHub</a> üzerinden ulaşabilirsiniz.</p>
+        <hr>
+        <p class="metin-alinent">Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma uygundur. Kaynak
+            kodlarına <a href="https://github.com/netsentez/yazilim" class="no-change-color">GitHub</a> üzerinden
+            ulaşabilirsiniz.</p>
         <p class="metin-alinent"><a href="https://netsentez.com/" class="no-change-color">netsentez Ana Platform</a></p>
-        <br
-    </div>
-    
-    <script>
-        const affirmations = [
-            // Mutluluk ve Neşe
-            "Ben mutluluğu hak ediyorum ve onu her an deneyimliyorum.",
-            "Hayatın küçük anlarında neşe buluyorum.",
-            "Her gün kendime gülmek ve eğlenmek için izin veriyorum.",
-            "Pozitif enerji yayıyor ve pozitif enerjiyi çekiyorum.",
-            "Benim kalbim neşe ve şükranla dolu.",
-            "Hayat bana her gün güzellikler sunuyor.",
-            "Benim içimde sonsuz bir neşe kaynağı var.",
-            "Bugün harika bir gün olacak.",
-            "Her anın tadını çıkarıyorum.",
-            "Kendimi mutlu hissetmek benim seçimim.",
+        <br </div>
 
-            // Sevgi ve İlişkiler
-            "Ben sevmeye ve sevilmeye değerim.",
-            "Kalbim sevgiye açık ve doludur.",
-            "Kendimi seviyor ve olduğum gibi kabul ediyorum.",
-            "Tüm ilişkilerim sevgi, saygı ve anlayış üzerine kurulu.",
-            "Affediciyim ve kalbimde kin tutmuyorum.",
-            "Evren bana saf ve koşulsuz sevgi gönderiyor.",
-            "Herkesin içinde iyilik görüyorum.",
-            "Sevgi dolu bir enerji alanı yaratıyorum.",
-            "Ben bir sevgi mıknatısıyım.",
-            "İnsanlarla bağlantı kurmak bana keyif veriyor.",
+        <script>
+            const affirmations = [
+                // Mutluluk ve Neşe
+                "Ben mutluluğu hak ediyorum ve onu her an deneyimliyorum.",
+                "Hayatın küçük anlarında neşe buluyorum.",
+                "Her gün kendime gülmek ve eğlenmek için izin veriyorum.",
+                "Pozitif enerji yayıyor ve pozitif enerjiyi çekiyorum.",
+                "Benim kalbim neşe ve şükranla dolu.",
+                "Hayat bana her gün güzellikler sunuyor.",
+                "Benim içimde sonsuz bir neşe kaynağı var.",
+                "Bugün harika bir gün olacak.",
+                "Her anın tadını çıkarıyorum.",
+                "Kendimi mutlu hissetmek benim seçimim.",
 
-            // Başarı ve Bolluk
-            "Benim için başarı doğal bir sonuçtur.",
-            "Tüm hayallerimi gerçekleştirecek güce sahibim.",
-            "Bolluk ve refah hayatıma akıyor.",
-            "Finansal özgürlüğe ulaşmak benim hakkım.",
-            "Yeni fırsatlara ve sonsuz potansiyele açığım.",
-            "Benim yeteneklerim ve becerilerim takdir ediliyor.",
-            "Her zaman doğru zamanda doğru yerdeyim.",
-            "İşimi tutkuyla yapıyor ve büyük başarılar elde ediyorum.",
-            "Evrenin tüm zenginlikleri bana akıyor.",
-            "Ben bir başarı ve bolluk mıknatısıyım.",
+                // Sevgi ve İlişkiler
+                "Ben sevmeye ve sevilmeye değerim.",
+                "Kalbim sevgiye açık ve doludur.",
+                "Kendimi seviyor ve olduğum gibi kabul ediyorum.",
+                "Tüm ilişkilerim sevgi, saygı ve anlayış üzerine kurulu.",
+                "Affediciyim ve kalbimde kin tutmuyorum.",
+                "Evren bana saf ve koşulsuz sevgi gönderiyor.",
+                "Herkesin içinde iyilik görüyorum.",
+                "Sevgi dolu bir enerji alanı yaratıyorum.",
+                "Ben bir sevgi mıknatısıyım.",
+                "İnsanlarla bağlantı kurmak bana keyif veriyor.",
 
-            // Dayanıklılık ve Güç
-            "Ben güçlü ve dirençliyim.",
-            "Her zorluğun üstesinden gelebilirim.",
-            "İçimdeki gücü ve cesareti kullanıyorum.",
-            "Engeller beni daha da güçlendirir.",
-            "Her durumdan ders çıkarır ve büyürüm.",
-            "Benim iradem sarsılmaz.",
-            "Korkularımı aşacak cesarete sahibim.",
-            "Her deneyim beni daha bilge yapar.",
-            "Ben kırılmaz bir ruha sahibim.",
-            "Her şeye rağmen yoluma devam ediyorum.",
+                // Başarı ve Bolluk
+                "Benim için başarı doğal bir sonuçtur.",
+                "Tüm hayallerimi gerçekleştirecek güce sahibim.",
+                "Bolluk ve refah hayatıma akıyor.",
+                "Finansal özgürlüğe ulaşmak benim hakkım.",
+                "Yeni fırsatlara ve sonsuz potansiyele açığım.",
+                "Benim yeteneklerim ve becerilerim takdir ediliyor.",
+                "Her zaman doğru zamanda doğru yerdeyim.",
+                "İşimi tutkuyla yapıyor ve büyük başarılar elde ediyorum.",
+                "Evrenin tüm zenginlikleri bana akıyor.",
+                "Ben bir başarı ve bolluk mıknatısıyım.",
 
-            // Kendini Kabullenme ve Özsaygı
-            "Kendimi olduğum gibi kabul ediyor ve seviyorum.",
-            "Ben değerli ve yeterliyim.",
-            "Kusurlarım beni eşsiz kılar.",
-            "Kendime saygı duyuyor ve sınırlarımı belirliyorum.",
-            "Kendi yolumu seçme cesaretine sahibim.",
-            "Kendime şefkatle yaklaşıyorum.",
-            "Benim içimdeki ışık parlak ve güçlü.",
-            "Benzersizliğim benim en büyük gücümdür.",
-            "Kendime güvenim tam.",
-            "Ben kendimin en iyi arkadaşıyım.",
+                // Dayanıklılık ve Güç
+                "Ben güçlü ve dirençliyim.",
+                "Her zorluğun üstesinden gelebilirim.",
+                "İçimdeki gücü ve cesareti kullanıyorum.",
+                "Engeller beni daha da güçlendirir.",
+                "Her durumdan ders çıkarır ve büyürüm.",
+                "Benim iradem sarsılmaz.",
+                "Korkularımı aşacak cesarete sahibim.",
+                "Her deneyim beni daha bilge yapar.",
+                "Ben kırılmaz bir ruha sahibim.",
+                "Her şeye rağmen yoluma devam ediyorum.",
 
-            // Sağlık ve Zindelik
-            "Bedenim sağlıklı ve güçlüdür.",
-            "Her hücrem enerjiyle dolu.",
-            "Sağlıklı seçimler yapıyor ve kendime iyi bakıyorum.",
-            "İyileşme enerjisi bedenimde akıyor.",
-            "Zihnim, bedenim ve ruhum uyum içindedir.",
-            "Her gün daha zinde ve enerjik oluyorum.",
-            "Benim bedenim şaşırtıcı bir iyileşme gücüne sahiptir.",
-            "Kendimi her zaman harika hissediyorum.",
-            "Benim bağışıklık sistemim güçlü.",
-            "Huzurlu bir uyku çekiyor ve dinlenmiş uyanıyorum.",
+                // Kendini Kabullenme ve Özsaygı
+                "Kendimi olduğum gibi kabul ediyor ve seviyorum.",
+                "Ben değerli ve yeterliyim.",
+                "Kusurlarım beni eşsiz kılar.",
+                "Kendime saygı duyuyor ve sınırlarımı belirliyorum.",
+                "Kendi yolumu seçme cesaretine sahibim.",
+                "Kendime şefkatle yaklaşıyorum.",
+                "Benim içimdeki ışık parlak ve güçlü.",
+                "Benzersizliğim benim en büyük gücümdür.",
+                "Kendime güvenim tam.",
+                "Ben kendimin en iyi arkadaşıyım.",
 
-            // Yaratıcılık ve İlham
-            "Benim içimde sonsuz bir yaratıcılık akışı var.",
-            "Yeni fikirler bana kolaylıkla geliyor.",
-            "İlham her yerde beni buluyor.",
-            "Yaratıcı enerjimi özgürce ifade ediyorum.",
-            "Her gün yeni şeyler öğrenmeye açığım.",
-            "Benim hayal gücüm sınırsızdır.",
-            "Kendi sanatsal yönümü keşfediyorum.",
-            "Yaratıcılığım bana yeni yollar açıyor.",
-            "Ben bir ilham kaynağıyım.",
-            "Farklı düşünmekten keyif alıyorum.",
+                // Sağlık ve Zindelik
+                "Bedenim sağlıklı ve güçlüdür.",
+                "Her hücrem enerjiyle dolu.",
+                "Sağlıklı seçimler yapıyor ve kendime iyi bakıyorum.",
+                "İyileşme enerjisi bedenimde akıyor.",
+                "Zihnim, bedenim ve ruhum uyum içindedir.",
+                "Her gün daha zinde ve enerjik oluyorum.",
+                "Benim bedenim şaşırtıcı bir iyileşme gücüne sahiptir.",
+                "Kendimi her zaman harika hissediyorum.",
+                "Benim bağışıklık sistemim güçlü.",
+                "Huzurlu bir uyku çekiyor ve dinlenmiş uyanıyorum.",
 
-            // Huzur ve İçsel Dinginlik
-            "İçsel huzur ve dinginlik benimle birlikte.",
-            "Stresi kolayca yönetiyor ve serbest bırakıyorum.",
-            "Meditasyon ve farkındalık hayatıma huzur getiriyor.",
-            "Her anın tadını çıkarıyor ve anda kalıyorum.",
-            "Ben sakin ve merkezlenmiş bir bireyim.",
-            "Dış etkenler beni etkilemiyor, iç huzurum sabit.",
-            "Benim ruhum huzur doludur.",
-            "Her nefesimde rahatlama hissediyorum.",
-            "Hayatın akışına güveniyorum.",
-            "Benim kalbim huzurlu ve sakindir.",
+                // Yaratıcılık ve İlham
+                "Benim içimde sonsuz bir yaratıcılık akışı var.",
+                "Yeni fikirler bana kolaylıkla geliyor.",
+                "İlham her yerde beni buluyor.",
+                "Yaratıcı enerjimi özgürce ifade ediyorum.",
+                "Her gün yeni şeyler öğrenmeye açığım.",
+                "Benim hayal gücüm sınırsızdır.",
+                "Kendi sanatsal yönümü keşfediyorum.",
+                "Yaratıcılığım bana yeni yollar açıyor.",
+                "Ben bir ilham kaynağıyım.",
+                "Farklı düşünmekten keyif alıyorum.",
 
-            // Şükran ve Minnettarlık
-            "Hayatımdaki tüm güzellikler için minnettarım.",
-            "Şükran dolu bir kalbe sahibim.",
-            "Her gün şükredecek yeni şeyler buluyorum.",
-            "Minnettarlık benim temel enerjimdir.",
-            "Elimde olanlara odaklanıyorum ve takdir ediyorum.",
-            "Evrenin cömertliğine teşekkür ediyorum.",
-            "Hayat bana sürekli hediyeler sunuyor.",
-            "Her deneyim için şükrediyorum.",
-            "Şükranımı ifade etmekten mutluluk duyuyorum.",
-            "Ben minnettar bir kalple yaşıyorum.",
+                // Huzur ve İçsel Dinginlik
+                "İçsel huzur ve dinginlik benimle birlikte.",
+                "Stresi kolayca yönetiyor ve serbest bırakıyorum.",
+                "Meditasyon ve farkındalık hayatıma huzur getiriyor.",
+                "Her anın tadını çıkarıyor ve anda kalıyorum.",
+                "Ben sakin ve merkezlenmiş bir bireyim.",
+                "Dış etkenler beni etkilemiyor, iç huzurum sabit.",
+                "Benim ruhum huzur doludur.",
+                "Her nefesimde rahatlama hissediyorum.",
+                "Hayatın akışına güveniyorum.",
+                "Benim kalbim huzurlu ve sakindir.",
 
-            // Gelişim ve Öğrenme
-            "Her gün kendimi geliştiriyorum.",
-            "Öğrenmeye ve büyümeye açığım.",
-            "Hatalarımdan ders çıkarır ve ilerlerim.",
-            "Her deneyim beni daha iyi bir insan yapar.",
-            "Potansiyelimin sınırı yok.",
-            "Ben sürekli gelişen bir varlığım.",
-            "Bilgi ve bilgelik hayatıma akıyor.",
-            "Kendimi aşmak benim doğamda var.",
-            "Yeni beceriler öğrenmekten keyif alıyorum.",
-            "Daima ileriye doğru adımlar atıyorum."
-        ];
+                // Şükran ve Minnettarlık
+                "Hayatımdaki tüm güzellikler için minnettarım.",
+                "Şükran dolu bir kalbe sahibim.",
+                "Her gün şükredecek yeni şeyler buluyorum.",
+                "Minnettarlık benim temel enerjimdir.",
+                "Elimde olanlara odaklanıyorum ve takdir ediyorum.",
+                "Evrenin cömertliğine teşekkür ediyorum.",
+                "Hayat bana sürekli hediyeler sunuyor.",
+                "Her deneyim için şükrediyorum.",
+                "Şükranımı ifade etmekten mutluluk duyuyorum.",
+                "Ben minnettar bir kalple yaşıyorum.",
 
-        const affirmationDisplay = document.getElementById('affirmation-display');
-        const getAffirmationBtn = document.getElementById('get-affirmation-btn');
-        const stopAffirmationBtn = document.getElementById('stop-affirmation-btn');
-        const iconContainer = document.getElementById('icon-container');
+                // Gelişim ve Öğrenme
+                "Her gün kendimi geliştiriyorum.",
+                "Öğrenmeye ve büyümeye açığım.",
+                "Hatalarımdan ders çıkarır ve ilerlerim.",
+                "Her deneyim beni daha iyi bir insan yapar.",
+                "Potansiyelimin sınırı yok.",
+                "Ben sürekli gelişen bir varlığım.",
+                "Bilgi ve bilgelik hayatıma akıyor.",
+                "Kendimi aşmak benim doğamda var.",
+                "Yeni beceriler öğrenmekten keyif alıyorum.",
+                "Daima ileriye doğru adımlar atıyorum."
+            ];
 
-        const icons = [
-            '<i class="fas fa-magic"></i>',
-            '<i class="fas fa-sparkles"></i>',
-            '<i class="fas fa-star"></i>',
-            '<i class="fas fa-heart"></i>',
-            '<i class="fas fa-seedling"></i>',
-            '<i class="fas fa-sun"></i>',
-            '<i class="fas fa-gem"></i>',
-            '<i class="fas fa-feather-alt"></i>'
-        ];
+            const affirmationDisplay = document.getElementById('affirmation-display');
+            const getAffirmationBtn = document.getElementById('get-affirmation-btn');
+            const stopAffirmationBtn = document.getElementById('stop-affirmation-btn');
+            const iconContainer = document.getElementById('icon-container');
 
-        let intervalId; // Interval ID'sini saklamak için
+            const icons = [
+                '<i class="fas fa-magic"></i>',
+                '<i class="fas fa-sparkles"></i>',
+                '<i class="fas fa-star"></i>',
+                '<i class="fas fa-heart"></i>',
+                '<i class="fas fa-seedling"></i>',
+                '<i class="fas fa-sun"></i>',
+                '<i class="fas fa-gem"></i>',
+                '<i class="fas fa-feather-alt"></i>'
+            ];
 
-        function getRandomAffirmation() {
-            const randomIndex = Math.floor(Math.random() * affirmations.length);
-            return affirmations[randomIndex];
-        }
+            let intervalId; // Interval ID'sini saklamak için
 
-        function getRandomIcon() {
-            const randomIndex = Math.floor(Math.random() * icons.length);
-            return icons[randomIndex];
-        }
+            function getRandomAffirmation() {
+                const randomIndex = Math.floor(Math.random() * affirmations.length);
+                return affirmations[randomIndex];
+            }
 
-        function displayNewAffirmation() {
-            affirmationDisplay.classList.add('fade-out'); // Başlangıçta fade out sınıfı ekle
+            function getRandomIcon() {
+                const randomIndex = Math.floor(Math.random() * icons.length);
+                return icons[randomIndex];
+            }
 
-            setTimeout(() => {
-                affirmationDisplay.textContent = getRandomAffirmation();
-                iconContainer.innerHTML = getRandomIcon(); // İkonu değiştir
-                affirmationDisplay.classList.remove('fade-out'); // Fade in için fade out sınıfını kaldır
-            }, 500); // CSS geçiş süresi kadar bekler
-        }
+            function displayNewAffirmation() {
+                affirmationDisplay.classList.add('fade-out'); // Başlangıçta fade out sınıfı ekle
 
-        function startAffirmationRain() {
-            displayNewAffirmation(); // İlk olumlamayı hemen göster
-            intervalId = setInterval(displayNewAffirmation, 7000); // Her 7 saniyede bir yeni olumlama
-            getAffirmationBtn.style.display = 'none';
-            stopAffirmationBtn.style.display = 'inline-flex';
-        }
+                setTimeout(() => {
+                    affirmationDisplay.textContent = getRandomAffirmation();
+                    iconContainer.innerHTML = getRandomIcon(); // İkonu değiştir
+                    affirmationDisplay.classList.remove('fade-out'); // Fade in için fade out sınıfını kaldır
+                }, 500); // CSS geçiş süresi kadar bekler
+            }
 
-        function stopAffirmationRain() {
-            clearInterval(intervalId); // Otomatik geçişi durdur
-            affirmationDisplay.textContent = "Olumlama yağmuru duraklatıldı. Tekrar başlatmak için 'Başlat' düğmesine tıklayın.";
-            getAffirmationBtn.style.display = 'inline-flex';
-            stopAffirmationBtn.style.display = 'none';
-        }
+            function startAffirmationRain() {
+                displayNewAffirmation(); // İlk olumlamayı hemen göster
+                intervalId = setInterval(displayNewAffirmation, 7000); // Her 7 saniyede bir yeni olumlama
+                getAffirmationBtn.style.display = 'none';
+                stopAffirmationBtn.style.display = 'inline-flex';
+            }
 
-        // Sayfa yüklendiğinde rastgele bir olumlama göster
-        document.addEventListener('DOMContentLoaded', () => {
-            displayNewAffirmation();
-        });
+            function stopAffirmationRain() {
+                clearInterval(intervalId); // Otomatik geçişi durdur
+                affirmationDisplay.textContent = "Olumlama yağmuru duraklatıldı. Tekrar başlatmak için 'Başlat' düğmesine tıklayın.";
+                getAffirmationBtn.style.display = 'inline-flex';
+                stopAffirmationBtn.style.display = 'none';
+            }
 
-        // Buton olay dinleyicileri
-        getAffirmationBtn.addEventListener('click', startAffirmationRain);
-        stopAffirmationBtn.addEventListener('click', stopAffirmationRain);
+            // Sayfa yüklendiğinde rastgele bir olumlama göster
+            document.addEventListener('DOMContentLoaded', () => {
+                displayNewAffirmation();
+            });
 
-    </script>
+            // Buton olay dinleyicileri
+            getAffirmationBtn.addEventListener('click', startAffirmationRain);
+            stopAffirmationBtn.addEventListener('click', stopAffirmationRain);
+
+        </script>
 </body>
+
 </html>

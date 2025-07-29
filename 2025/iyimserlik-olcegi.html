@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="İyimserlik Ölçeği ile kendinizi değerlendirin. 20 ölçek maddesine cevap verin, sonuçları alın.">
+    <meta name="description"
+        content="İyimserlik Ölçeği ile kendinizi değerlendirin. 20 ölçek maddesine cevap verin, sonuçları alın.">
     <meta name="author" content="Dr. Nizamettin Kaya">
     <link rel="shortcut icon" type="image/jpg" href="../images/favicon.ico">
     <title>İyimserlik Ölçeği</title>
@@ -28,7 +30,10 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             color: #2c3e50;
             margin-top: 0;
             margin-bottom: 10px;
@@ -38,7 +43,7 @@
         h1 {
             font-size: 2.8em;
             margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
         }
 
         h2 {
@@ -66,9 +71,10 @@
             margin-top: 0;
             margin-bottom: 3px;
         }
+
         .metin-alinent {
             text-align: center;
-            color:#777;
+            color: #777;
             margin-top: 0;
             margin-bottom: 3px;
         }
@@ -131,17 +137,20 @@
         }
 
         .test-section {
-            display: none; /* Varsayılan olarak gizli */
+            display: none;
+            /* Varsayılan olarak gizli */
         }
 
         .test-section.active {
-            display: block; /* Aktif olanı göster */
+            display: block;
+            /* Aktif olanı göster */
         }
 
         .question-area {
             font-size: 1.2em;
             margin-bottom: 20px;
-            min-height: 80px; /* Soruların görülebileceği minimum yükseklik */
+            min-height: 80px;
+            /* Soruların görülebileceği minimum yükseklik */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -177,8 +186,9 @@
             display: none;
         }
 
-        .options-area input[type="radio"]:checked + label {
-            background-color: #28a745; /* Seçili olduğunda yeşil */
+        .options-area input[type="radio"]:checked+label {
+            background-color: #28a745;
+            /* Seçili olduğunda yeşil */
             color: white;
         }
 
@@ -194,7 +204,8 @@
             border: 1px solid #eee;
             border-radius: 8px;
             background-color: #fdfdfd;
-            display: none; /* Varsayılan olarak gizli */
+            display: none;
+            /* Varsayılan olarak gizli */
             text-align: center;
         }
 
@@ -210,12 +221,14 @@
             border-radius: 5px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 1em;
-            box-sizing: border-box; /* Padding'in genişliğe dahil olmasını sağlar */
+            box-sizing: border-box;
+            /* Padding'in genişliğe dahil olmasını sağlar */
             margin-bottom: 15px;
         }
 
         .copy-button {
-            background-color: #17a2b8; /* Bilgi rengi */
+            background-color: #17a2b8;
+            /* Bilgi rengi */
             padding: 10px 20px;
             color: white;
             border: none;
@@ -230,7 +243,8 @@
         }
 
         .restart-button {
-            background-color: #dc3545; /* Tehlike rengi */
+            background-color: #dc3545;
+            /* Tehlike rengi */
             padding: 10px 20px;
             color: white;
             border: none;
@@ -250,43 +264,56 @@
             body {
                 padding: 10px;
             }
+
             .container {
                 margin: 20px auto;
                 padding: 20px;
             }
+
             h1 {
                 font-size: 2.2em;
             }
+
             h2 {
                 font-size: 1.8em;
             }
+
             h3 {
                 font-size: 1.4em;
             }
+
             h4 {
                 font-size: 1.1em;
             }
+
             p {
                 font-size: 1em;
             }
+
             .button-link {
                 padding: 10px 20px;
                 font-size: 1em;
             }
+
             .hero-image {
                 height: 200px;
             }
+
             .options-area {
-                flex-direction: column; /* Mobil cihazlarda seçenekleri alt alta sırala */
+                flex-direction: column;
+                /* Mobil cihazlarda seçenekleri alt alta sırala */
                 align-items: center;
             }
+
             .options-area label {
-                width: 80%; /* Seçeneklerin daha geniş olmasını sağlar */
+                width: 80%;
+                /* Seçeneklerin daha geniş olmasını sağlar */
                 text-align: center;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container" id="test-container">
 
@@ -295,16 +322,19 @@
         </div>
 
         <h1>İyimserlik Ölçeği</h1>
-        <h4>İyimserlik-karamsarlık ve kabullenicilik-dışlayıcılık boyutlarında kendinizi değerlendirin. 20 ölçek maddesine "Her Zaman", "Ara Sıra", "Hiç" seçeneklerinden biriyle cevap verin.</h4>
-        <hr>        
+        <h4>İyimserlik-karamsarlık ve kabullenicilik-dışlayıcılık boyutlarında kendinizi değerlendirin. 20 ölçek
+            maddesine "Her Zaman", "Ara Sıra", "Hiç" seçeneklerinden biriyle cevap verin.</h4>
+        <hr>
         <p>
-            Hiçbir kimlik bilginiz alınmaz, cevaplarınız kaydedilmez. Ölçeğin psikometrik geçerliliği ve güvenilirliği ölçülmemiş, standartları belirlenmemiştir.
+            Hiçbir kimlik bilginiz alınmaz, cevaplarınız kaydedilmez. Ölçeğin psikometrik geçerliliği ve güvenilirliği
+            ölçülmemiş, standartları belirlenmemiştir.
         </p>
         <p>
-            Bu uygulama, ölçek geliştiricileri için yazılım örneği ve bireyler için öz değerlendirme aracıdır. Cevaplarınızı tamamladığınızda sonuçları alacaksınız. İsterseniz bu sonuçları panonuza kopyalayabilirsiniz.
+            Bu uygulama, ölçek geliştiricileri için yazılım örneği ve bireyler için öz değerlendirme aracıdır.
+            Cevaplarınızı tamamladığınızda sonuçları alacaksınız. İsterseniz bu sonuçları panonuza kopyalayabilirsiniz.
         </p>
         <br>
-        <h3>Haydi başlayalım...</h3>        
+        <h3>Haydi başlayalım...</h3>
         <div id="quiz-section">
             <div class="question-area" id="question-text"></div>
             <div class="options-area">
@@ -331,7 +361,9 @@
         <h2>Kaynaklar</h2>
         <div id="references-section"></div>
         <hr>
-        <p class="metin-alinent">Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma uygundur. Kaynak kodlarına <a href="https://github.com/netsentez/yazilim" class="no-change-color">GitHub</a> üzerinden ulaşabilirsiniz.</p>
+        <p class="metin-alinent">Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma uygundur. Kaynak
+            kodlarına <a href="https://github.com/netsentez/yazilim" class="no-change-color">GitHub</a> üzerinden
+            ulaşabilirsiniz.</p>
         <p class="metin-alinent"><a href="https://netsentez.com/" class="no-change-color">netsentez Ana Platform</a></p>
         <br>
     </div>
@@ -618,4 +650,5 @@
     </script>
 
 </body>
+
 </html>
