@@ -8,6 +8,16 @@
     <link rel="shortcut icon" type="image/jpg" href="images/favicon.ico">
     <title>netsentez Yazılım</title>
     <style>
+        .fixed-search-container {
+            position: fixed; /* Öğeyi tarayıcı penceresine göre sabitler */
+            top: 0;          /* Tarayıcı penceresinin en üstüne hizalar */
+            left: 0;         /* Tarayıcı penceresinin en soluna hizalar */
+            width: 900px;    /* Genişliğini 900px yapar */
+            background-color: #ffffff; /* Arka plan rengi (arama çubuğunun altındaki içeriği gizlemek için) */
+            padding: 30px; /* İçerik etrafında boşluk bırakır */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Hafif bir gölge ekleyerek daha belirgin hale getirir */
+            z-index: 1000;   /* Diğer tüm öğelerin üzerinde görünmesini sağlar */
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern ve okunaklı bir font */
             margin: 0; /* Varsayılan marginleri sıfırla */
@@ -27,9 +37,6 @@
             background-color: #fff;
             border-radius: 10px; /* Daha yuvarlak köşeler */
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Daha belirgin gölge */
-        }
-        .fixed-search-container {
-            position: fixed; /* Öğeyi tarayıcı penceresine göre sabitler */           
         }
 
         .hero-section {
@@ -203,7 +210,7 @@
         <script async src="https://cse.google.com/cse.js?cx=009537792171396931332:anbqpbk0wdu"></script>
         <div class="gcse-search"></div>
         </div>
-
+        
         <h1>netsentez Yazılım</h1>
         <h3>Dr. Nizamettin Kaya tarafından geliştirilen basit web uygulamaları ve araçları.</h3>
         
