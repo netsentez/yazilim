@@ -1,13 +1,14 @@
-# netsentez Yazılım 
-Dr. Nizamettin Kaya tarafından geliştirilen basit web uygulamaları ve araçları.  
-[netsentez.codes](https://netsentez.codes/)
-
-## 2025
-### Olumlu Telkinler Yağmuru
+# netsentez Yazılım  
+Dr. Nizamettin Kaya tarafından geliştirilen basit web uygulamaları ve araçları. Teknolojiler, bilgiler, tanıtımlar, açıklamalar ve daha fazlası...  
+[netsentez.codes](https://netsentez.codes/)  
+## 2025 
+### Google Colab: Anında Kod Yazmanın Pratik Ortamı  
+Kurulum derdi olmadan, anında kod yazmaya başlayabileceğiniz, veri bilimi ve makine öğrenimi projelerinizi kolayca hayata geçirebileceğimiz bulut tabanlı bir ortam. 
+### Olumlu Telkinler Yağmuru  
 Olumlu telkinler (olumlamalar/affirmations) bizi daha mutlu, daha başarılı, daha üretken, daha güvenli, daha dayanıklı hâle getirir. Bu araç, size bir olumlamalar yağmuru sunuyor. Kendinize güzel bakın...
-### İyimserlik Ölçeği 
+### İyimserlik Ölçeği  
 İyimserlik-karamsarlık ve kabullenicilik-dışlayıcılık boyutlarında kendinizi değerlendirin. 20 ölçek maddesine "Her Zaman", "Ara Sıra", "Hiç" seçeneklerinden biriyle cevap verin. Sonuçları alın.
-### Metin Biçimlendirici 
+### Metin Biçimlendirici  
 - Metni girin/yapıştırın.
 - Biçimlendirin: Koyu, Eğik, Koyu+Eğik.
 - Biçimlendirilmiş metni kopyalayın.
