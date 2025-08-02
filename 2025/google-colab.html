@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Veri bilimi ve makine öğrenimi projeleri için  bulut tabanlı bir ortam. Öğrenciler, eğitimciler ve hobi projeleriyle uğraşan herkes Colab'ta kendisine uygun olanaklar bulacaktır.">
+    <meta name="author" content="Dr. Nizamettin Kaya">
+    <link rel="shortcut icon" type="image/jpg" href="../images/favicon.ico">
+    <title>Google Colab: Anında Kod Yazmanın Pratik Ortamı</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #eef2f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-size: 2.2em;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-size: 1.6em;
+            color: #34495e;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        h4 {
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 0;
+            margin-bottom: 3px;
+        }
+
+        .metin-alinent {
+            text-align: center;
+            color: #777;
+            margin-top: 0;
+            margin-bottom: 3px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+            margin: 30px 0;
+        }
+
+        a.no-change-color:link,
+        a.no-change-color:visited {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a.no-change-color:hover {
+            color: #0056b3;
+        }
+
+        a.no-change-color:active {
+            color: #003e80;
+        }
+
+        .app-item {
+            background-color: #fdfdfd;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .app-item p {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .button-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            cursor: pointer;
+            border: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                margin: 20px auto;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            h3 {
+                font-size: 1.4em;
+                text-align: left;
+            }
+
+            h4 {
+                font-size: 1.1em;
+            }
+
+            p {
+                font-size: 1.1em;
+            }
+
+            .button-link {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="app-item">
+            <a href="../" class="button-link"><b>&lt;&lt;</b> Ana Sayfa</a>
+        </div>
+
+        <h1>Google Colab: Anında Kod Yazmanın Pratik Ortamı</h1>
+        <h4>Kurulum derdi olmadan, anında kod yazmaya başlayabileceğiniz, veri bilimi ve makine öğrenimi projelerinizi
+            kolayca hayata geçirebileceğiniz bulut tabanlı bir ortam.</h4>
+        <hr>
+        <p>
+            Colab, Google tarafından sunulan, bulut tabanlı bir Jupyter Not Defteri ortamıdır. Bu ortamın
+            sıfır kurulum
+            gerektirmesi sayesinde, web tarayıcınızdan anında kod yazmaya başlayabilirsiniz. Özellikle
+            <strong>öğrenciler,
+                eğitimciler ve hobi projeleriyle uğraşan herkes</strong> Colab'ta kendisine uygun olanaklar bulacaktır.
+            Colab'ın
+            ücretsiz GPU
+            ve TPU
+            erişimi, büyük veri kümeleriyle çalışmayı veya derin öğrenme modellerini eğitmeyi kolaylaştırıyor.
+        </p>
+        <p>
+            <strong>Basit kişisel projelerden, veri yönetimi ve analizlerine, akademik çalışmalara kadar geniş bir
+                kullanım
+                alanı</strong> olan Colab not defterlerini Google Drive'a kaydetmek ve dilediğiniz kişilerle paylaşmak
+            çok kolay.
+            Gerçek zamanlı işbirliği özelliği sayesinde arkadaşlarınızla veya ekip üyelerinizle aynı not defteri
+            üzerinde eş zamanlı çalışabilir, hatta GitHub ile entegrasyon sayesinde projeleriniz geliştikçe sürüm
+            aşamalarını kaydedip yönetebilirsiniz.
+        </p>
+        <p>
+            <strong>Oluşturduğunuz analizleri, görselleri ve kodları blog yazılarınıza veya web sitelerinize</strong>
+            gömerek
+            çalışmalarınızı geniş kitlelere ulaştırmak da Colab ile çok kolaydır. Metin hücrelerinde
+            <strong>Markdown</strong> desteği ve
+            <strong>etkileşimli widget'lar</strong> sayesinde, not defterlerinizi sadece birer kod dosyası olmaktan
+            çıkarıp, adeta
+            yaşayan, etkileşimli raporlara dönüştürebilirsiniz.
+        </p>
+        <p>
+            Colab, <strong>özellikle öğrenme ve eğitim süreçleri</strong> için harika bir araçtır. Önceden yüklenmiş
+            popüler
+            kütüphanelerle hızlıca denemeler yapabilir, karmaşık kurulumlarla uğraşmadan yapay zekâ kavramlarını pratik
+            ederek öğrenebilirsiniz. Hatta Gemini AI entegrasyonu sayesinde kod üretimi, açıklama ve hata ayıklama gibi
+            konularda yapay zekâdan destek alabilirsiniz.
+        </p>
+        <p>
+            Colab, bilgisayarınızın donanımından bağımsız olarak Google'ın güçlü altyapısından faydalanmanızı
+            sağlayarak,
+            herkes için erişilebilir bir veri bilimi ve makine öğrenimi ortamı sunuyor. Kendi öğrenme yolculuğunuzda,
+            kişisel projelerinizde veya blogunuzda <strong>etkileşimli içerikler</strong> oluşturmak için mükemmel bir
+            başlangıç
+            noktasıdır.
+        </p>
+        <p>
+            Colab'ın sunduğu bu olanaklar, veri bilimi ve makine öğrenimi alanında yeni başlayanlardan profesyonellere
+            kadar herkes için büyük kolaylıklar sağlıyor. Bu nedenle, Colab'ı denemenizi ve projelerinizde nasıl
+            kullanabileceğinizi keşfetmenizi öneririm.
+        </p>
+        <p>
+            Aşağıda bağlantısını verdiğim PDF dosyasında Google Colab'ın tüm detaylarını, nasıl kullanacağınızı ve daha
+            fazlasını bulacaksınız. Bu doküman, Google Gemini Deep Research tarafından oluşturulan bir araştırma
+            raporudur.
+        </p>
+        <h3 style="text-align: left;">Google Colab: Kapsamlı Bir İnceleme:</h3>
+
+        <div class="app-item">
+            <a href="../pdf-01/google-colab.pdf" class="button-link">Google Colab (PDF)</a>
+        </div>
+
+        <hr>
+        <p class="metin-alinent">Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma uygundur. Kaynak
+            kodlarına <a href="https://github.com/netsentez/yazilim" class="no-change-color">GitHub</a> üzerinden
+            ulaşabilirsiniz.</p>
+        <p class="metin-alinent"><a href="https://netsentez.com/" class="no-change-color">netsentez Ana Platform</a></p>
+        <br>
+    </div>
+
+</body>
+
+</html>
