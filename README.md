@@ -1,5 +1,5 @@
 # netsentez Yazılım  
-Dr. Nizamettin Kaya tarafından geliştirilen basit web uygulamaları ve araçları. Teknolojiler, bilgiler, tanıtımlar, açıklamalar ve daha fazlası...  
+Basit web uygulamaları ve araçları. Teknolojiler, bilgiler, tanıtımlar, açıklamalar ve daha fazlası...  
 [netsentez.codes](https://netsentez.codes/)  
 ## 2025 
 ### Google Colab: Anında Kod Yazmanın Pratik Ortamı  
