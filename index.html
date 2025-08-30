@@ -2,307 +2,200 @@
 <html lang="tr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 1️⃣ Karakter kodlaması ve mobil uyum -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 2️⃣ Sayfa başlığı ve açıklama -->
     <title>Yazılım | netsentez</title>
     <meta name="description"
-        content="Basit web uygulamaları ve araçları. Teknolojiler, bilgiler, tanıtımlar, açıklamalar ve daha fazlası...">
+        content="Basit web uygulamaları ve araçları. Tanıtımlar, açıklamalar. Veri analizi ve daha fazlası...">
+    <meta name="keywords"
+        content="Html, CSS, JavaScript, Python, R, Excel, Colab, İstatistik, Araştırma, Ölçme ve Değerlendirme, Eğitim, Psikoloji, Kişisel Gelişim">
     <meta name="author" content="Dr. Nizamettin Kaya">
-    <link rel="shortcut icon" type="image/jpg" href="/images/favicon.ico">
 
+    <!-- 3️⃣ Canonical URL -->
+    <link rel="canonical" href="https://netsentez.codes/">
+
+    <!-- 4️⃣ Sosyal medya önizleme (Open Graph & Twitter) -->
+    <meta property=" og:type" content="website">
+    <meta property="og:title" content="Yazılım | netsentez">
+    <meta property="og:description"
+        content="Basit web uygulamaları ve araçları. Tanıtımlar, açıklamalar. Veri analizi ve daha fazlası...">
+    <meta property="og:url" content="https://netsentez.codes/">
+    <meta property="og:image" content="https://netsentez.codes/images/hero.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yazılım | netsentez">
+    <meta name="twitter:description"
+        content="Basit web uygulamaları ve araçları. Tanıtımlar, açıklamalar. Veri analizi ve daha fazlası...">
+    <meta name="twitter:image" content="https://netsentez.codes/images/hero.png">
+
+    <!-- 5️⃣ Favicon ve Apple Touch Icon -->
+    <link rel="icon" href="/images/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- 6️⃣ Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- 7️⃣ Bootstrap CSS (SRI + güvenlik) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        integrity="sha256-zRgmWB5PK4CvTx4FiXsxbHaYRBBjz/rvu97sOC7kzXI=" crossorigin="anonymous">
+
+    <!-- 8️⃣ Font Awesome CSS (SRI + güvenlik) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- 9️⃣ Özel CSS (kendi stillerim) -->
     <style>
+        /* Özel CSS stilleri */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Modern ve okunaklı bir font */
-            margin: 0;
-            /* Varsayılan marginleri sıfırla */
-            padding: 20px;
-            /* Kenarlardan boşluk bırak */
-            background-color: #eef2f7;
-            /* Açık gri tonlu arka plan */
-            color: #333;
-            line-height: 1.6;
-            /* Okunabilirliği artırır */
+            font-family: 'Inter', sans-serif;
         }
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            max-width: 900px;
-            /* Daha geniş bir konteyner */
-            margin: 30px auto;
-            /* Üstte ve altta biraz daha boşluk */
-            padding: 30px;
-            /* İç boşluğu artır */
-            background-color: #fff;
-            border-radius: 10px;
-            /* Daha yuvarlak köşeler */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            /* Daha belirgin gölge */
+        /* Dark tema navbar aktif link */
+        .navbar-dark .navbar-nav .nav-link.active {
+            color: #fff !important;
+            background-color: var(--bs-primary) !important;
+            /* Dark temada sarı tonlu vurgulama */
+            border-radius: 0.25rem;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
         }
 
-        .hero-section {
-            width: 100%;
-            overflow: hidden;
-            /* Taşmayı engeller */
-            margin-bottom: 30px;
-            /* Konteyner ile arasında boşluk bırakır */
-            border-radius: 10px;
-            /* Konteyner ile uyumlu köşe yuvarlaklığı */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            /* Konteyner ile uyumlu gölge */
+        .my-title {
+            letter-spacing: 3px;
+            /* Harfler arası boşluk */
         }
 
-        .hero-image {
-            width: 100%;
-            /* Kapsayıcı genişliğine yayılır */
-            height: 300px;
-            /* Sabit bir yükseklik verilebilir */
-            object-fit: cover;
-            /* Görüntünün en boy oranını koruyarak alanı doldurur */
-            display: block;
-            /* Altındaki boşluğu engeller */
-        }
-
-        /* Başlıklar için genel stil */
-        h1,
-        h2,
-        h3,
-        h4 {
-            color: #2c3e50;
-            /* Koyu gri ton */
-            margin-top: 0;
-            /* Üst boşluğu sıfırla, container gap ile yönetilecek */
-            margin-bottom: 10px;
-            /* Alt boşluk */
-            text-align: center;
-            /* Başlıkları ortala */
-        }
-
-        h1 {
-            font-size: 2.8em;
-            /* Daha büyük başlık */
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
-            /* Hafif gölge */
-        }
-
-        h2 {
-            font-size: 2.2em;
-            border-bottom: 2px solid #aec6d9;
-            /* Alt çizgi */
-            padding-bottom: 10px;
-            margin-top: 30px;
-            /* Bölümler arasında daha fazla boşluk */
-        }
-
-        h3 {
-            font-size: 1.6em;
-            color: #34495e;
-            text-align: center;
-            font-weight: normal;
-            /* Daha az kalın */
-        }
-
-        h4 {
-            font-size: 1.3em;
-            color: #555;
-            margin-bottom: 5px;
-            /* Açıklama ile daha yakın */
-            text-align: left;
-        }
-
-        p {
-            font-size: 1.1em;
-            color: #666;
-            text-align: left;
-            margin-bottom: 3px;
-            /* Paragraflar arasında daha fazla boşluk */
-        }
-
-        .metin-alinent {
-            text-align: center;
-            color: #777;
-        }
-
-        hr {
-            border: 0;
-            height: 1px;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-            /* Hafif bir gradyan çizgisi */
-            margin: 30px 0;
-            /* Çizginin üstünde ve altında daha fazla boşluk */
-        }
-
-        /* Sadece .no-change-color sınıfına sahip linkler için */
-        a.no-change-color:link,
-        a.no-change-color:visited {
-            color: #007bff;
-            /* Örneğin, mavi tonu. İstediğiniz rengi buraya yazın. */
-            text-decoration: none;
-            /* İsteğe bağlı: Alt çizgiyi kaldırır */
-        }
-
-        /* Normal hover (fare üzerine gelme) ve active (tıklanma) durumları */
-        a.no-change-color:hover {
-            color: #0056b3;
-            /* Hover rengi (biraz daha koyu mavi) */
-        }
-
-        a.no-change-color:active {
-            color: #003e80;
-            /* Active rengi (daha da koyu mavi) */
-        }
-
-        .app-item {
-            background-color: #fdfdfd;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            /* Her uygulama öğesi arasında boşluk */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            display: flex;
-            /* İçindeki öğeleri hizalamak için flex kullan */
-            flex-direction: column;
-            /* İçerikleri dikey sırala */
-            align-items: flex-start;
-            /* Sol tarafa hizala */
-        }
-
-        .app-item p {
-            margin-bottom: 15px;
-            /* Açıklama ile buton arasına boşluk */
-            text-align: left;
-            /* Uygulama açıklamalarını sola hizala */
-        }
-
-        .button-link {
-            display: inline-block;
-            /* Metne göre genişlemesini ve satır içi blok olarak davranmasını sağlar */
-            padding: 12px 25px;
-            /* Daha dolgun butonlar */
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 6px;
-            /* Daha yumuşak köşeler */
-            cursor: pointer;
-            border: none;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 1.1em;
-            /* Buton yazısını büyüt */
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            /* Hover efekti için yumuşak geçiş */
-            /* width: auto; /* Bu zaten varsayılan davranış, ancak belirtmek faydalı */
-            /* Bu satırı kaldırdığınızda veya auto yaptığınızda, metne göre genişleyecektir. */
-        }
-
-        .button-link:hover {
-            background-color: #0056b3;
-        }
-
-        /* Mobil uyumluluk için medya sorguları */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
-            .container {
-                margin: 20px auto;
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 2.2em;
-            }
-
-            h2 {
-                font-size: 1.8em;
-            }
-
-            h3 {
-                font-size: 1.4em;
-            }
-
-            h4 {
-                font-size: 1.1em;
-            }
-
-            p {
-                font-size: 1em;
-            }
-
-            .button-link {
-                padding: 10px 20px;
-                font-size: 1em;
-            }
-
-            .hero-image {
-                height: 200px;
-                /* Daha küçük ekranlarda daha az yükseklik */
-            }
-
-            hr {
-                margin: 15px 0;
-                /* Mobilde daha az boşluk */
+        @media (max-width: 575.98px) {
+            h1.display-3 {
+                font-size: 3.5rem;
+                /* 80px yerine daha büyük */
             }
         }
     </style>
+
+    <!-- 🔟 Bootstrap JS (bundle, SRI) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+        integrity="sha256-lel57Jim1/CW4I1iEkaHexK/J9h/ZRneeORKiQuNOIg=" crossorigin="anonymous" defer></script>
+
+    <script defer>
+        const yilEl = document.getElementById("yil");
+        if (yilEl) yilEl.textContent = new Date().getFullYear();
+
+    </script>
 </head>
 
-<body>
-    <div class="container">
+<body class="bg-light">
 
-        <header class="hero-section">
-            <img src="images/kapak-ana-sayfa.jpeg" alt="Yazılım Uygulamaları Kapak Görseli" class="hero-image">
-        </header>
 
-        <script async src="https://cse.google.com/cse.js?cx=009537792171396931332:anbqpbk0wdu"></script>
-        <div class="gcse-search"></div>
+    <header class="shadow-sm pb-5 pt-4 text-light text-center bg-primary">
+        <div class="container">
+            <h1 class="display-3 mt-2 my-title">Yazılım</h1>
+            <h2 class="h2">netsentez</h2>
+            <h4 class="h4 text-warning mt-4 mb-4">Basit web uygulamaları ve araçları. Tanıtımlar, açıklamalar. Veri
+                analizi
+                ve daha fazlası.</h4>
+            <h4 class="h4">Dr. Nizamettin Kaya</h4>
+        </div>
+    </header>
+    <div class="bg-white">
+        <div class="container p-0">
+            <script async src="https://cse.google.com/cse.js?cx=009537792171396931332:anbqpbk0wdu"></script>
+            <div class="gcse-search"></div>
+        </div>
+    </div>
 
-        <h1 style="padding-top: 15px">Yazılım netsentez</h1>
-        <h3>Basit web uygulamaları ve araçları. Teknolojiler,
-            bilgiler, tanıtımlar,
-            açıklamalar ve daha fazlası...</h3>
+    <main class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8">
 
-        <hr>
-        <div class="app-item">
-            <h4>Google Colab: Anında Kod Yazmanın Pratik Ortamı</h4>
-            <p>Kurulum derdi olmadan, anında kod yazmaya başlayabileceğiniz, veri bilimi ve makine öğrenimi
-                projelerinizi kolayca hayata geçirebileceğimiz bulut tabanlı bir ortam.
+                <div class="card p-4 rounded-3 shadow-sm bg-white mb-5">
+                    <h2 class="h4 text-primary">Google Colab: Anında Kod Yazmanın Pratik Ortamı</h2>
+                    <hr class="my-3">
+                    <p class="lead">Kurulum derdi olmadan, anında kod yazmaya başlayabileceğiniz, veri bilimi ve makine
+                        öğrenimi projelerinizi kolayca hayata geçirebileceğimiz bulut tabanlı bir ortam.</p>
+                    <div class="d-flex align-items-center mt-3">
+                        <i class="fa-solid fa-blog fa-2x text-primary me-3"></i>
+                        <a href="/2025/google-colab.html"
+                            class="btn btn-outline-primary btn-lg rounded-pill">Okuyun/İnceleyin</a>
+                    </div>
+                </div>
+
+                <div class="card p-4 rounded-3 shadow-sm bg-white mb-5">
+                    <h2 class="h4 text-primary">Olumlu Telkinler Yağmuru</h2>
+                    <hr class="my-3">
+                    <p class="lead">Olumlu telkinler (olumlamalar/affirmations) bizi daha mutlu, daha başarılı, daha
+                        üretken, daha güvenli,
+                        daha dayanıklı ve daha toplumsal hâle getirir. Bu araç, size bir olumlamalar yağmuru sunuyor.
+                        Haydi
+                        izleyelim...</p>
+                    <div class="d-flex align-items-center mt-3">
+                        <i class="fa-solid fa-blog fa-2x text-primary me-3"></i>
+                        <a href="/2025/olumlamalar-yagmuru.html"
+                            class="btn btn-outline-primary btn-lg rounded-pill">Okuyun/İnceleyin</a>
+                    </div>
+                </div>
+
+                <div class="card p-4 rounded-3 shadow-sm bg-white mb-5">
+                    <h2 class="h4 text-primary">İyimserlik Ölçeği</h2>
+                    <hr class="my-3">
+                    <p class="lead">İyimserlik-karamsarlık ve kabullenicilik-dışlayıcılık boyutlarında kendinizi
+                        değerlendirin. 20 ölçek
+                        maddesine "Her Zaman", "Ara Sıra", "Hiç" seçeneklerinden biriyle cevap verin. Sonuçları alın.
+                    </p>
+                    <div class="d-flex align-items-center mt-3">
+                        <i class="fa-solid fa-blog fa-2x text-primary me-3"></i>
+                        <a href="/2025/iyimserlik-olcegi.html"
+                            class="btn btn-outline-primary btn-lg rounded-pill">Okuyun/İnceleyin</a>
+                    </div>
+                </div>
+
+                <div class="card p-4 rounded-3 shadow-sm bg-white mb-5">
+                    <h2 class="h4 text-primary">Facebook Gönderileri için Metin Biçimlendirici</h2>
+                    <hr class="my-3">
+                    <p class="lead">Koyu, Eğik, Koyu+Eğik biçimlendirici. Metni girin, biçimlendirin, alın, gönderinize
+                        yapıştırın, paylaşın.</p>
+                    <div class="d-flex align-items-center mt-3">
+                        <i class="fa-solid fa-blog fa-2x text-primary me-3"></i>
+                        <a href="/2025/metin-bicimlendirici.html"
+                            class="btn btn-outline-primary btn-lg rounded-pill">Okuyun/İnceleyin</a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 80px;">
+                    <div class="text-center mb-5 rounded-3 shadow-sm bg-white border">
+                        <img class="img-fluid rounded-3 w-75" src="images/logo-netsentez.png" alt="netsentez logosu"
+                            title="netsentez">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container text-center">
+            <p>Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma uygundur.
+                Kaynak
+                kodlarına <a href="https://github.com/netsentez/yazilim"
+                    class="text-warning text-decoration-none">GitHub</a> üzerinden
+                ulaşabilirsiniz.</p>
+            <hr class="my-4">
+            <p><a href="https://netsentez.com/" class="text-warning text-decoration-none">Ana Platform | netsentez</a>
             </p>
-            <a href="2025/google-colab.html" class="button-link">Git</a>
         </div>
-        <div class="app-item">
-            <h4>Olumlu Telkinler Yağmuru</h4>
-            <p>Olumlu telkinler (olumlamalar/affirmations) bizi daha mutlu, daha başarılı, daha üretken, daha güvenli,
-                daha dayanıklı ve daha toplumsal hâle getirir. Bu araç, size bir olumlamalar yağmuru sunuyor. Haydi
-                izleyelim...</p>
-            <a href="2025/olumlamalar-yagmuru.html" class="button-link">Git</a>
-        </div>
+    </footer>
 
-        <div class="app-item">
-            <h4>İyimserlik Ölçeği</h4>
-            <p>İyimserlik-karamsarlık ve kabullenicilik-dışlayıcılık boyutlarında kendinizi değerlendirin. 20 ölçek
-                maddesine "Her Zaman", "Ara Sıra", "Hiç" seçeneklerinden biriyle cevap verin. Sonuçları alın.</p>
-            <a href="2025/iyimserlik-olcegi.html" class="button-link">Git</a>
-        </div>
-
-        <div class="app-item">
-            <h4>Facebook Gönderileri için Metin Biçimlendirici</h4>
-            <p>Koyu, Eğik, Koyu+Eğik biçimlendirici. Metni girin, biçimlendirin, alın, gönderinize yapıştırın, paylaşın.
-            </p>
-            <a href="2025/metin-bicimlendirici.html" class="button-link">Git</a>
-        </div>
-        <hr>
-
-        <p class="metin-alinent">Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma uygundur. Kaynak
-            kodlarına <a href="https://github.com/netsentez/yazilim" class="no-change-color">GitHub</a> üzerinden
-            ulaşabilirsiniz.</p>
-        <p class="metin-alinent"><a href="https://netsentez.com/" class="no-change-color">netsentez Ana Platform</a></p>
-        <br </div>
 </body>
 
 </html>
