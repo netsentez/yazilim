@@ -2,575 +2,416 @@
 <html lang="tr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Koyu, Eğik, Koyu+Eğik biçimlendirici. Metni girin, biçimlendirin, alın, gönderinize yapıştırın, paylaşın.">
-    <meta name="author" content="Dr. Nizamettin Kaya">
-    <link rel="shortcut icon" type="image/jpg" href="../images/favicon.ico">
-    <meta property="og:image" content="../images/kapak-ana-sayfa.jpeg" />
-    <title>Facebook Gönderileri İçin Metin Biçimlendirici</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Modern ve okunaklı bir font */
-            margin: 0;
-            /* Varsayılan marginleri sıfırla */
-            padding: 20px;
-            /* Kenarlardan boşluk bırak */
-            background-color: #eef2f7;
-            /* Açık gri tonlu arka plan */
-            color: #333;
-            line-height: 1.6;
-            /* Okunabilirliği artırır */
-        }
+  <!-- 1️⃣ Karakter kodlaması ve mobil uyum -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            max-width: 900px;
-            /* Daha geniş bir konteyner */
-            margin: 30px auto;
-            /* Üstte ve altta biraz daha boşluk */
-            padding: 30px;
-            /* İç boşluğu artır */
-            background-color: #fff;
-            border-radius: 10px;
-            /* Daha yuvarlak köşeler */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            /* Daha belirgin gölge */
-        }
+  <!-- 2️⃣ Sayfa başlığı ve açıklama -->
+  <title>Facebook Gönderileri İçin Metin Biçimlendirici</title>
+  <meta name="description"
+    content="Koyu, Eğik, Koyu+Eğik biçimlendirici. Metni girin, biçimlendirin, alın, gönderinize yapıştırın, paylaşın.">
+  <meta name="keywords" content="Facebook, X, Unicode, Koyu, Eğik, Biçimlendirme">
+  <meta name="author" content="Dr. Nizamettin Kaya">
 
-        /* Başlıklar için genel stil */
-        h1,
-        h2,
-        h3,
-        h4 {
-            color: #2c3e50;
-            /* Koyu gri ton */
-            margin-top: 0;
-            /* Üst boşluğu sıfırla, container gap ile yönetilecek */
-            margin-bottom: 10px;
-            /* Alt boşluk */
-            text-align: center;
-            /* Başlıkları ortala */
-        }
+  <!-- 3️⃣ Canonical URL -->
+  <link rel="canonical" href="https://netsentez.codes/2025/metin-bicimlendirici.html">
 
-        h1 {
-            font-size: 2.8em;
-            /* Daha büyük başlık */
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
-            /* Hafif gölge */
-        }
+  <!-- 4️⃣ Sosyal medya önizleme (Open Graph & Twitter) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Facebook Gönderileri İçin Metin Biçimlendirici">
+  <meta property="og:description"
+    content="Koyu, Eğik, Koyu+Eğik biçimlendirici. Metni girin, biçimlendirin, alın, gönderinize yapıştırın, paylaşın.">
+  <meta property="og:url" content="https://netsentez.codes/2025/metin-bicimlendirici.html">
+  <meta property="og:image" content="https://netsentez.codes/images/hero.png">
 
-        h2 {
-            font-size: 2.2em;
-            text-align: left;
-            padding-bottom: 10px;
-            margin-top: 30px;
-            /* Bölümler arasında daha fazla boşluk */
-        }
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Facebook Gönderileri İçin Metin Biçimlendirici">
+  <meta name="twitter:description"
+    content="Koyu, Eğik, Koyu+Eğik biçimlendirici. Metni girin, biçimlendirin, alın, gönderinize yapıştırın, paylaşın.">
+  <meta name="twitter:image" content="https://netsentez.codes/images/hero.png">
 
-        h3 {
-            font-size: 1.6em;
-            color: #34495e;
-            text-align: center;
-            font-weight: normal;
-            /* Daha az kalın */
-        }
+  <!-- 5️⃣ Favicon ve Apple Touch Icon -->
+  <link rel="icon" href="../images/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
 
-        h4 {
-            font-size: 1.3em;
-            color: #555;
-            margin-bottom: 5px;
-            /* Açıklama ile daha yakın */
-        }
+  <!-- 6️⃣ Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-        p {
-            font-size: 1.1em;
-            color: #666;
-            margin-bottom: 3px;
-            /* Paragraflar arası boşluk */
-            text-align: left;
-            /* Paragraf metnini yasla */
-        }
+  <!-- 7️⃣ Bootstrap CSS (SRI + güvenlik) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+    integrity="sha256-zRgmWB5PK4CvTx4FiXsxbHaYRBBjz/rvu97sOC7kzXI=" crossorigin="anonymous">
 
-        .metin-alinent {
-            text-align: center;
-            color: #777;
-        }
+  <!-- 8️⃣ Font Awesome CSS (SRI + güvenlik) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <!-- 9️⃣ Özel CSS (sade / bileşen odaklı) -->
+  <style>
+    :root {
+      --ns-gap: .75rem;
+    }
 
-        hr {
-            border: 0;
-            height: 1px;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-            /* Hafif bir gradyan çizgisi */
-            margin: 30px 0;
-            /* Çizginin üstünde ve altında daha fazla boşluk */
-        }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
 
-        /* Sadece .no-change-color sınıfına sahip linkler için */
-        a.no-change-color:link,
-        a.no-change-color:visited {
-            color: #007bff;
-            /* Örneğin, mavi tonu. İstediğiniz rengi buraya yazın. */
-            text-decoration: none;
-            /* İsteğe bağlı: Alt çizgiyi kaldırır */
-        }
+    /* Ana aksiyon alanı */
+    .tool-card textarea.form-control {
+      min-height: 260px;
+      font-size: 1.125rem;
+      line-height: 1.5;
+      resize: vertical;
+    }
 
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            box-sizing: border-box;
-            border-radius: 4px;
-            font-size: 18px;
-            min-height: 150px;
-            resize: vertical;
-            line-height: 1.5;
-        }
+    /* Klavye kısayolları kutusu */
+    .shortcut-info {
+      background: var(--bs-light);
+      border: 1px dashed var(--bs-secondary);
+      border-radius: .75rem;
+      padding: .75rem 1rem;
+      font-size: .9375rem;
+    }
 
-        label {
-            font-weight: bold;
-            margin-bottom: 5px;
-            display: block;
-        }
+    .shortcut-info ul {
+      margin-bottom: 0;
+    }
 
-        .output-section {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+    .shortcut-info li code {
+      font-size: .875rem;
+    }
 
-        .copy-button {
-            padding: 10px 15px;
-            background-color: #28a745;
-            /* Yeşil */
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            align-self: flex-start;
-            transition: background-color 0.2s ease;
-        }
+    /* Sticky aside görseli */
+    .brand-card img {
+      max-width: 72%;
+    }
 
-        .copy-button:hover {
-            background-color: #218838;
-        }
-
-        .toolbar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 10px;
-            margin-bottom: 5px;
-        }
-
-        .toolbar button {
-            padding: 8px 15px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 15px;
-            transition: background-color 0.2s ease;
-        }
-
-        .toolbar button:hover {
-            background-color: #0056b3;
-        }
-
-        .toolbar button:disabled {
-            background-color: #cccccc;
-            cursor: not-allowed;
-        }
-
-        .shortcut-info {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        .app-item {
-            background-color: #fdfdfd;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            /* Her uygulama öğesi arasında boşluk */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            display: flex;
-            /* İçindeki öğeleri hizalamak için flex kullan */
-            flex-direction: column;
-            /* İçerikleri dikey sırala */
-            align-items: flex-start;
-            /* Sol tarafa hizala */
-        }
-
-        .app-item p {
-            margin-bottom: 15px;
-            /* Açıklama ile buton arasına boşluk */
-            text-align: left;
-            /* Uygulama açıklamalarını sola hizala */
-        }
-
-        .button-link {
-            display: inline-block;
-            /* Metne göre genişlemesini ve satır içi blok olarak davranmasını sağlar */
-            padding: 12px 25px;
-            /* Daha dolgun butonlar */
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 6px;
-            /* Daha yumuşak köşeler */
-            cursor: pointer;
-            border: none;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 1.1em;
-            /* Buton yazısını büyüt */
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            /* Hover efekti için yumuşak geçiş */
-            /* width: auto; /* Bu zaten varsayılan davranış, ancak belirtmek faydalı */
-            /* Bu satırı kaldırdığınızda veya auto yaptığınızda, metne göre genişleyecektir. */
-        }
-
-        .button-link:hover {
-            background-color: #0056b3;
-        }
-
-        /* Mobil uyumluluk için medya sorguları */
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-
-            .container {
-                margin: 20px auto;
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 2.2em;
-            }
-
-            h2 {
-                font-size: 1.8em;
-            }
-
-            h3 {
-                font-size: 1.4em;
-            }
-
-            h4 {
-                font-size: 1.1em;
-            }
-
-            p {
-                font-size: 1em;
-            }
-
-            .button-link {
-                padding: 10px 20px;
-                font-size: 1em;
-            }
-        }
-    </style>
+    /* İsteğe bağlı küçük kozmetik */
+    .ns-toolbar .btn {
+      min-width: 110px;
+    }
+  </style>
 </head>
 
-<body>
-    <div class="container">
-        <div class="app-item">
-            <a href="../" class="button-link"><b>&lt;&lt;</b> Ana Sayfa</a>
-        </div>
-        <h1>Facebook Gönderileri İçin Metin Biçimlendirici</h1>
-        <p>PC'lerde kullanın.</p>
-        <p>Ne yazık ki özel Türkçe karakterlerin (İ I Ğ Ü Ş Ö Ç) biçimlenmiş hâllerinin Unicode karşılıkları yok. Bu
-            uygulamada en stabil çözüm olarak Unicode'da doğrudan karşılığı olanlar dönüştürülüyor, olmayanlar orijinal
-            bırakılıyor.</p>
-        <br>
-        <div>
-            <label for="inputText">Biçimlendirmek istediğiniz metni buraya girin:<br></label>
-            <textarea id="inputText"
-                placeholder="Metni girin, kelime veya kelime gruplarını seçin, biçimlendirin..."></textarea>
-            <div class="toolbar">
-                <button id="boldButton"><b>Koyu</b></button>
-                <button id="italicButton"><i>Eğik</i></button>
-                <button id="boldItalicButton"><b><i>Koyu+Eğik</i></b></button>
-                <button id="undoButton" disabled>Geri Al</button>
-                <button id="redoButton" disabled>Yinele</button>
-            </div>
-            <div class="shortcut-info">
-                Klavye Kısayolları:
-                <ul>
-                    <li>**Ctrl/Cmd + B**: Koyu</li>
-                    <li>**Ctrl/Cmd + I**: Eğik</li>
-                    <li>**Ctrl/Cmd + K**: Koyu ve Eğik</li>
-                    <li>**Ctrl/Cmd + Z**: Geri Al</li>
-                    <li>**Ctrl/Cmd + Y**: Yinele</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="output-section">
-            <label for="unicodeOutput">Biçimlenmiş metni buradan alın:</label>
-            <textarea id="unicodeOutput" readonly></textarea>
-            <button class="copy-button" id="copyButton">Biçimlenmiş Metni Kopyala</button>
-        </div>
-        <hr>
-        <p class="metin-alinent">Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma uygundur. Kaynak
-            kodlarına <a href="https://github.com/netsentez/yazilim" class="no-change-color">GitHub</a> üzerinden
-            ulaşabilirsiniz.</p>
-        <p class="metin-alinent"><a href="https://netsentez.com/" class="no-change-color">netsentez Ana Platform</a></p>
-        <br>
+<body class="bg-light">
+  <!-- Üst navigasyon -->
+  <div class="container pt-2 pb-2">
+    <div class="d-flex align-items-center mt-2">
+      <a href="../" class="btn btn-outline-primary rounded-pill d-inline-flex align-items-center gap-2">
+        <i class="fa-solid fa-house text-warning"></i>
+        <span>Ana Sayfa</span>
+      </a>
     </div>
+  </div>
 
-    <script>
-        const inputTextarea = document.getElementById('inputText');
-        const unicodeOutputTextarea = document.getElementById('unicodeOutput');
-        const copyButton = document.getElementById('copyButton');
-        const boldButton = document.getElementById('boldButton');
-        const italicButton = document.getElementById('italicButton');
-        const boldItalicButton = document.getElementById('boldItalicButton');
-        const undoButton = document.getElementById('undoButton');
-        const redoButton = document.getElementById('redoButton');
+  <!-- Başlık -->
+  <header class="shadow-sm pb-5 pt-4 mt-1 text-light text-center bg-primary">
+    <div class="container">
+      <h1 class="display-5 fw-bold my-3">Facebook Gönderileri İçin Metin Biçimlendirici</h1>
+      <p class="lead m-0 text-warning">Dr. Nizamettin Kaya · netsentez</p>
+    </div>
+  </header>
 
-        // Unicode karakter eşlemeleri (Düzeltilmiş ve en stabil versiyon)
-        const unicodeMap = {
-            bold: {
-                'A': '𝐀', 'B': '𝐁', 'C': '𝐂', 'D': '𝐃', 'E': '𝐄', 'F': '𝐅', 'G': '𝐆', 'H': '𝐇', 'I': '𝐈', 'J': '𝐉', 'K': '𝐊', 'L': '𝐋', 'M': '𝐌',
-                'N': '𝐍', 'O': '𝐎', 'P': '𝐏', 'Q': '𝐐', 'R': '𝐑', 'S': '𝐒', 'T': '𝐓', 'U': '𝐔', 'V': '𝐕', 'W': '𝐖', 'X': '𝐗', 'Y': '𝐘', 'Z': '𝐙',
-                'a': '𝐚', 'b': '𝐛', 'c': '𝐜', 'd': '𝐝', 'e': '𝐞', 'f': '𝐟', 'g': '𝐠', 'h': '𝐡', 'i': '𝐢', 'j': '𝐣', 'k': '𝐤', 'l': '𝐥', 'm': '𝐦',
-                'n': '𝐧', 'o': '𝐨', 'p': '𝐩', 'q': '𝐪', 'r': '𝐫', 's': '𝐬', 't': '𝐭', 'u': '𝐮', 'v': '𝐯', 'w': '𝐰', 'x': '𝐱', 'y': '𝐲', 'z': '𝐳',
-                '0': '𝟎', '1': '𝟏', '2': '𝟐', '3': '𝟑', '4': '𝟒', '5': '𝟓', '6': '𝟔', '7': '𝟕', '8': '𝟖', '9': '𝟗',
-                // Türkçe karakterler için en stabil çözüm:
-                // Unicode'da doğrudan karşılığı olanlar dönüştürülür, olmayanlar orijinal bırakılır.
-                'İ': 'İ', 'I': '𝐈', 'ı': '𝚤', // Bold 'ı' için direct karşılık yok, italic 'ı' daha iyi bir alternatif veya normal 'ı'
-                'Ç': 'Ç', 'Ğ': 'Ğ', 'Ö': 'Ö', 'Ş': 'Ş', 'Ü': 'Ü',
-                'ç': 'ç', 'ğ': 'ğ', 'ö': 'ö', 'ş': 'ş', 'ü': 'ü'
-            },
-            italic: {
-                'A': '𝘈', 'B': '𝘉', 'C': '𝘊', 'D': '𝘋', 'E': '𝘌', 'F': '𝘍', 'G': '𝘎', 'H': '𝘏', 'I': '𝘐', 'J': '𝘑', 'K': '𝘒', 'L': '𝘓', 'M': '𝘔',
-                'N': '𝘕', 'O': '𝘖', 'P': '𝘗', 'Q': '𝘘', 'R': '𝘙', 'S': '𝘚', 'T': '𝘛', 'U': '𝘜', 'V': '𝘝', 'W': '𝘞', 'X': '𝘟', 'Y': '𝘠', 'Z': '𝘡',
-                'a': '𝘢', 'b': '𝘣', 'c': '𝘤', 'd': '𝘥', 'e': '𝘦', 'f': '𝘧', 'g': '𝘨', 'h': '𝘩', 'i': '𝘪', 'j': '𝘫', 'k': '𝘬', 'l': '𝘭', 'm': '𝘮',
-                'n': '𝘯', 'o': '𝘰', 'p': '𝘱', 'q': '𝘲', 'r': '𝘳', 's': '𝘴', 't': '𝘵', 'u': '𝘶', 'v': '𝘷', 'w': '𝘸', 'x': '𝘹', 'y': '𝘺', 'z': '𝘻',
-                // Türkçe karakterler
-                'İ': 'İ', 'I': '𝘐', 'ı': '𝚤', // Italic 'ı' (dotless i)
-                'Ç': 'Ç', 'Ğ': 'Ğ', 'Ö': 'Ö', 'Ş': 'Ş', 'Ü': 'Ü',
-                'ç': 'ç', 'ğ': 'ğ', 'ö': 'ö', 'ş': 'ş', 'ü': 'ü'
-            },
-            boldItalic: {
-                'A': '𝑨', 'B': '𝑩', 'C': '𝑪', 'D': '𝑫', 'E': '𝑬', 'F': '𝑭', 'G': '𝑮', 'H': '𝑯', 'I': '𝑰', 'J': '𝑱', 'K': '𝑲', 'L': '𝑳', 'M': '𝑴',
-                'N': '𝑵', 'O': '𝑶', 'P': '𝑷', 'Q': '𝑸', 'R': '𝑹', 'S': '𝑺', 'T': '𝑻', 'U': '𝑼', 'V': '𝑽', 'W': '𝑾', 'X': '𝑿', 'Y': '𝒀', 'Z': '𝒁',
-                'a': '𝒂', 'b': '𝒃', 'c': '𝒄', 'd': '𝒅', 'e': '𝒆', 'f': '𝒇', 'g': '𝒈', 'h': '𝒉', 'i': '𝒊', 'j': '𝒋', 'k': '𝒌', 'l': '𝒍', 'm': '𝒎',
-                'n': '𝒏', 'o': '𝒐', 'p': '𝒑', 'q': '𝒒', 'r': '𝒓', 's': '𝒔', 't': '𝒕', 'u': '𝒖', 'v': '𝒗', 'w': '𝒘', 'x': '𝒙', 'y': '𝒚', 'z': '𝒛',
-                // Türkçe karakterler
-                'İ': 'İ', 'I': '𝑰', 'ı': '𝚤', // Bold-italic 'ı' için de en yakın alternatif italic 'ı' veya normal 'ı'
-                'Ç': 'Ç', 'Ğ': 'Ğ', 'Ö': 'Ö', 'Ş': 'Ş', 'Ü': 'Ü',
-                'ç': 'ç', 'ğ': 'ğ', 'ö': 'ö', 'ş': 'ş', 'ü': 'ü'
-            }
-        };
+  <!-- Özel Google arama -->
+  <div class="bg-white border-bottom">
+    <div class="container py-2">
+      <script async src="https://cse.google.com/cse.js?cx=009537792171396931332:anbqpbk0wdu"></script>
+      <div class="gcse-search"></div>
+    </div>
+  </div>
 
+  <!-- İçerik -->
+  <main class="container my-4">
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <!-- Bilgi kartı -->
+        <div class="alert alert-info shadow-sm" role="alert">
+          <div class="mb-1 fw-semibold">Türkçe karakterler hakkında:</div>
+          <small>Özel Türkçe karakterlerin (İ I Ğ Ü Ş Ö Ç) biçimlenmiş hâllerinin Unicode karşılıkları her zaman mevcut
+            değildir.
+            Bu uygulama, <u>doğrudan karşılığı olanları</u> dönüştürür; olmayanları <u>orijinal hâliyle</u>
+            bırakır.</small>
+        </div>
 
-        // Biçimlendirilmiş karakterleri normal hallerine dönüştürmek için tersine eşleme oluştur
-        const reverseUnicodeMap = new Map();
-        for (const styleType in unicodeMap) {
-            for (const originalChar in unicodeMap[styleType]) {
-                const styledChar = unicodeMap[styleType][originalChar];
-                // Eğer zaten bir eşleme yoksa veya orijinal karakter daha öncelikliyse ekle
-                if (!reverseUnicodeMap.has(styledChar)) {
-                    reverseUnicodeMap.set(styledChar, originalChar);
-                }
-            }
-        }
-        // Noktalama işaretleri ve diğer semboller için de tersine eşleme ekleyelim,
-        // böylece temizleme fonksiyonu bunları da doğru bir şekilde algılar ve değiştirmez.
-        const commonPunctuationAndSymbols = '.,?!:;\'"()-/\\_+=*&^%$#@!~`<>{}[]|';
-        for (const char of commonPunctuationAndSymbols) {
-            if (!reverseUnicodeMap.has(char)) {
-                reverseUnicodeMap.set(char, char);
-            }
-        }
-        for (let i = 0; i <= 9; i++) { // Rakamlar
-            const char = String(i);
-            if (!reverseUnicodeMap.has(char)) {
-                reverseUnicodeMap.set(char, char);
-            }
-        }
-        // Boşluk karakteri
-        if (!reverseUnicodeMap.has(' ')) {
-            reverseUnicodeMap.set(' ', ' ');
-        }
+        <!-- Araç kartı -->
+        <div class="card shadow-sm tool-card mb-4">
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="inputText" class="form-label fw-semibold">Biçimlendirmek istediğiniz metni buraya
+                girin</label>
+              <textarea id="inputText" class="form-control"
+                placeholder="Metni girin, kelime veya kelime gruplarını seçin, ardından alttaki butonlarla biçimlendirin..."></textarea>
+            </div>
 
+            <!-- Araç çubuğu -->
+            <div class="d-flex flex-wrap gap-2 ns-toolbar mb-3">
+              <button id="boldButton" type="button" class="btn btn-primary"><b>Koyu</b></button>
+              <button id="italicButton" type="button" class="btn btn-secondary"><i>Eğik</i></button>
+              <button id="boldItalicButton" type="button" class="btn btn-dark"><b><i>Koyu+Eğik</i></b></button>
+              <div class="vr d-none d-sm-flex"></div>
+              <button id="undoButton" type="button" class="btn btn-outline-secondary" disabled>Geri Al</button>
+              <button id="redoButton" type="button" class="btn btn-outline-secondary" disabled>Yinele</button>
+            </div>
 
-        let history = [];
-        let historyIndex = -1;
-        let isProgrammaticChange = false;
+            <!-- Kısayol bilgisi -->
+            <div class="shortcut-info mb-3">
+              <div class="fw-semibold mb-1">Klavye Kısayolları</div>
+              <ul class="mb-0">
+                <li><code>Ctrl/Cmd + B</code>: Koyu</li>
+                <li><code>Ctrl/Cmd + I</code>: Eğik</li>
+                <li><code>Ctrl/Cmd + K</code>: Koyu ve Eğik</li>
+                <li><code>Ctrl/Cmd + Z</code>: Geri Al</li>
+                <li><code>Ctrl/Cmd + Y</code>: Yinele</li>
+              </ul>
+            </div>
 
-        inputTextarea.addEventListener('input', (event) => {
-            if (!isProgrammaticChange) {
-                saveState();
-            }
-            updateUnicodeOutput();
-        });
+            <!-- Çıktı -->
+            <div class="mb-3">
+              <label for="unicodeOutput" class="form-label fw-semibold">Biçimlenmiş metni buradan alın</label>
+              <textarea id="unicodeOutput" class="form-control" readonly></textarea>
+            </div>
 
-        inputTextarea.addEventListener('keydown', handleKeyPress);
-        copyButton.addEventListener('click', copyToClipboard);
+            <div class="d-flex gap-2">
+              <button class="btn btn-success" id="copyButton">
+                <i class="fa-regular fa-copy me-1"></i> Biçimlenmiş Metni Kopyala
+              </button>
+              <div id="copyToast" class="toast align-items-center text-bg-success border-0" role="alert"
+                aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                  <div class="toast-body">Panoya kopyalandı!</div>
+                  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        boldButton.addEventListener('click', () => applyFormatToSelection('bold'));
-        italicButton.addEventListener('click', () => applyFormatToSelection('italic'));
-        boldItalicButton.addEventListener('click', () => applyFormatToSelection('boldItalic'));
+      <!-- Yan kolon -->
+      <div class="col-lg-4">
+        <div class="sticky-top" style="top: 80px;">
+          <div class="text-center mb-4 rounded-3 shadow-sm bg-white p-4 brand-card">
+            <img class="img-fluid rounded-3" src="../images/logo-netsentez.png" alt="netsentez logosu"
+              title="netsentez">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
-        undoButton.addEventListener('click', undo);
-        redoButton.addEventListener('click', redo);
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5 mt-4">
+    <div class="container text-center">
+      <p class="mb-3">Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma uygundur. Kaynak kodlarına
+        <a href="https://github.com/netsentez/yazilim" class="text-warning text-decoration-none">GitHub</a>
+        üzerinden ulaşabilirsiniz.
+      </p>
+      <hr class="my-4">
+      <p class="mb-0"><a href="https://netsentez.com/" class="text-warning text-decoration-none">Ana Platform |
+          netsentez</a></p>
+    </div>
+  </footer>
 
-        function saveState() {
-            const currentText = inputTextarea.value;
-            if (history.length > 0 && history[historyIndex] === currentText) {
-                return;
-            }
+  <!-- 🔟 Bootstrap JS (bundle önerilir) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha256-pqkQm02ZwDQLNE8Zb0Nb7DKC7e6fH4GzLwUj2gmBqz4=" crossorigin="anonymous"></script>
 
-            if (historyIndex < history.length - 1) {
-                history = history.slice(0, historyIndex + 1);
-            }
-            history.push(currentText);
-            historyIndex = history.length - 1;
-            updateButtons();
-        }
+  <script>
+    const inputTextarea = document.getElementById('inputText');
+    const unicodeOutputTextarea = document.getElementById('unicodeOutput');
+    const copyButton = document.getElementById('copyButton');
+    const boldButton = document.getElementById('boldButton');
+    const italicButton = document.getElementById('italicButton');
+    const boldItalicButton = document.getElementById('boldItalicButton');
+    const undoButton = document.getElementById('undoButton');
+    const redoButton = document.getElementById('redoButton');
 
-        function undo() {
-            if (historyIndex > 0) {
-                historyIndex--;
-                isProgrammaticChange = true;
-                inputTextarea.value = history[historyIndex];
-                isProgrammaticChange = false;
-                updateUnicodeOutput();
-                updateButtons();
-            }
-        }
+    // Bootstrap toast
+    let copyToastEl = document.getElementById('copyToast');
+    let copyToast;
 
-        function redo() {
-            if (historyIndex < history.length - 1) {
-                historyIndex++;
-                isProgrammaticChange = true;
-                inputTextarea.value = history[historyIndex];
-                isProgrammaticChange = false;
-                updateUnicodeOutput();
-                updateButtons();
-            }
-        }
+    // Unicode karakter eşlemeleri (orijinal mantık korunarak)
+    const unicodeMap = {
+      bold: {
+        'A': '𝐀', 'B': '𝐁', 'C': '𝐂', 'D': '𝐃', 'E': '𝐄', 'F': '𝐅', 'G': '𝐆', 'H': '𝐇', 'I': '𝐈', 'J': '𝐉', 'K': '𝐊', 'L': '𝐋', 'M': '𝐌',
+        'N': '𝐍', 'O': '𝐎', 'P': '𝐏', 'Q': '𝐐', 'R': '𝐑', 'S': '𝐒', 'T': '𝐓', 'U': '𝐔', 'V': '𝐕', 'W': '𝐖', 'X': '𝐗', 'Y': '𝐘', 'Z': '𝐙',
+        'a': '𝐚', 'b': '𝐛', 'c': '𝐜', 'd': '𝐝', 'e': '𝐞', 'f': '𝐟', 'g': '𝐠', 'h': '𝐡', 'i': '𝐢', 'j': '𝐣', 'k': '𝐤', 'l': '𝐥', 'm': '𝐦',
+        'n': '𝐧', 'o': '𝐨', 'p': '𝐩', 'q': '𝐪', 'r': '𝐫', 's': '𝐬', 't': '𝐭', 'u': '𝐮', 'v': '𝐯', 'w': '𝐰', 'x': '𝐱', 'y': '𝐲', 'z': '𝐳',
+        '0': '𝟎', '1': '𝟏', '2': '𝟐', '3': '𝟑', '4': '𝟒', '5': '𝟓', '6': '𝟔', '7': '𝟕', '8': '𝟖', '9': '𝟗',
+        'İ': 'İ', 'I': '𝐈', 'ı': '𝚤',
+        'Ç': 'Ç', 'Ğ': 'Ğ', 'Ö': 'Ö', 'Ş': 'Ş', 'Ü': 'Ü', 'ç': 'ç', 'ğ': 'ğ', 'ö': 'ö', 'ş': 'ş', 'ü': 'ü'
+      },
+      italic: {
+        'A': '𝘈', 'B': '𝘉', 'C': '𝘊', 'D': '𝘋', 'E': '𝘌', 'F': '𝘍', 'G': '𝘎', 'H': '𝘏', 'I': '𝘐', 'J': '𝘑', 'K': '𝘒', 'L': '𝘓', 'M': '𝘔',
+        'N': '𝘕', 'O': '𝘖', 'P': '𝘗', 'Q': '𝘘', 'R': '𝘙', 'S': '𝘚', 'T': '𝘛', 'U': '𝘜', 'V': '𝘝', 'W': '𝘞', 'X': '𝘟', 'Y': '𝘠', 'Z': '𝘡',
+        'a': '𝘢', 'b': '𝘣', 'c': '𝘤', 'd': '𝘥', 'e': '𝘦', 'f': '𝘧', 'g': '𝘨', 'h': '𝘩', 'i': '𝘪', 'j': '𝘫', 'k': '𝘬', 'l': '𝘭', 'm': '𝘮',
+        'n': '𝘯', 'o': '𝘰', 'p': '𝘱', 'q': '𝘲', 'r': '𝘳', 's': '𝘴', 't': '𝘵', 'u': '𝘶', 'v': '𝘷', 'w': '𝘸', 'x': '𝘹', 'y': '𝘺', 'z': '𝘻',
+        'İ': 'İ', 'I': '𝘐', 'ı': '𝚤',
+        'Ç': 'Ç', 'Ğ': 'Ğ', 'Ö': 'Ö', 'Ş': 'Ş', 'Ü': 'Ü', 'ç': 'ç', 'ğ': 'ğ', 'ö': 'ö', 'ş': 'ş', 'ü': 'ü'
+      },
+      boldItalic: {
+        'A': '𝑨', 'B': '𝑩', 'C': '𝑪', 'D': '𝑫', 'E': '𝑬', 'F': '𝑭', 'G': '𝑮', 'H': '𝑯', 'I': '𝑰', 'J': '𝑱', 'K': '𝑲', 'L': '𝑳', 'M': '𝑴',
+        'N': '𝑵', 'O': '𝑶', 'P': '𝑷', 'Q': '𝑸', 'R': '𝑹', 'S': '𝑺', 'T': '𝑻', 'U': '𝑼', 'V': '𝑽', 'W': '𝑾', 'X': '𝑿', 'Y': '𝒀', 'Z': '𝒁',
+        'a': '𝒂', 'b': '𝒃', 'c': '𝒄', 'd': '𝒅', 'e': '𝒆', 'f': '𝒇', 'g': '𝒈', 'h': '𝒉', 'i': '𝒊', 'j': '𝒋', 'k': '𝒌', 'l': '𝒍', 'm': '𝒎',
+        'n': '𝒏', 'o': '𝒐', 'p': '𝒑', 'q': '𝒒', 'r': '𝒓', 's': '𝒔', 't': '𝒕', 'u': '𝒖', 'v': '𝒗', 'w': '𝒘', 'x': '𝒙', 'y': '𝒚', 'z': '𝒛',
+        'İ': 'İ', 'I': '𝑰', 'ı': '𝚤',
+        'Ç': 'Ç', 'Ğ': 'Ğ', 'Ö': 'Ö', 'Ş': 'Ş', 'Ü': 'Ü', 'ç': 'ç', 'ğ': 'ğ', 'ö': 'ö', 'ş': 'ş', 'ü': 'ü'
+      }
+    };
 
-        function updateButtons() {
-            undoButton.disabled = historyIndex <= 0;
-            redoButton.disabled = historyIndex >= history.length - 1;
-        }
+    // Ters eşleme
+    const reverseUnicodeMap = new Map();
+    for (const styleType in unicodeMap) {
+      for (const originalChar in unicodeMap[styleType]) {
+        const styledChar = unicodeMap[styleType][originalChar];
+        if (!reverseUnicodeMap.has(styledChar)) reverseUnicodeMap.set(styledChar, originalChar);
+      }
+    }
+    const commonPunctuationAndSymbols = '.,?!:\'"()-/\\_+=*&^%$#@!~`<>{}[]|';
+    for (const char of commonPunctuationAndSymbols) if (!reverseUnicodeMap.has(char)) reverseUnicodeMap.set(char, char);
+    for (let i = 0; i <= 9; i++) { const c = String(i); if (!reverseUnicodeMap.has(c)) reverseUnicodeMap.set(c, c); }
+    if (!reverseUnicodeMap.has(' ')) reverseUnicodeMap.set(' ', ' ');
 
-        function updateUnicodeOutput() {
-            unicodeOutputTextarea.value = inputTextarea.value;
-        }
+    let history = [];
+    let historyIndex = -1;
+    let isProgrammaticChange = false;
 
-        function cleanTextFromUnicodeStyles(text) {
-            let cleaned = '';
-            for (let i = 0; i < text.length; i++) {
-                const char = text[i];
-                if (reverseUnicodeMap.has(char)) {
-                    cleaned += reverseUnicodeMap.get(char);
-                } else {
-                    cleaned += char;
-                }
-            }
-            return cleaned;
-        }
+    inputTextarea.addEventListener('input', () => {
+      if (!isProgrammaticChange) saveState();
+      updateUnicodeOutput();
+    });
 
-        function applyUnicodeStyle(text, styleType) {
-            let cleanedText = cleanTextFromUnicodeStyles(text);
+    inputTextarea.addEventListener('keydown', handleKeyPress);
 
-            let result = '';
-            for (let i = 0; i < cleanedText.length; i++) {
-                const char = cleanedText[i];
-                if (unicodeMap[styleType] && unicodeMap[styleType][char]) {
-                    result += unicodeMap[styleType][char];
-                } else {
-                    result += char;
-                }
-            }
-            return result;
-        }
+    copyButton.addEventListener('click', copyToClipboard);
+    boldButton.addEventListener('click', () => applyFormatToSelection('bold'));
+    italicButton.addEventListener('click', () => applyFormatToSelection('italic'));
+    boldItalicButton.addEventListener('click', () => applyFormatToSelection('boldItalic'));
+    undoButton.addEventListener('click', undo);
+    redoButton.addEventListener('click', redo);
 
-        function applyFormatToSelection(styleType) {
-            const start = inputTextarea.selectionStart;
-            const end = inputTextarea.selectionEnd;
-            let selectedText = inputTextarea.value.substring(start, end);
+    function ensureToast() {
+      if (!copyToast && window.bootstrap) {
+        copyToast = new bootstrap.Toast(copyToastEl, { delay: 1500 });
+      }
+    }
 
-            if (selectedText) {
-                const newText = applyUnicodeStyle(selectedText, styleType);
-                const fullText = inputTextarea.value;
+    function saveState() {
+      const currentText = inputTextarea.value;
+      if (history.length > 0 && history[historyIndex] === currentText) return;
+      if (historyIndex < history.length - 1) history = history.slice(0, historyIndex + 1);
+      history.push(currentText);
+      historyIndex = history.length - 1;
+      updateButtons();
+    }
 
-                isProgrammaticChange = true;
-                inputTextarea.value = fullText.substring(0, start) + newText + fullText.substring(end);
-                isProgrammaticChange = false;
+    function undo() {
+      if (historyIndex > 0) {
+        historyIndex--;
+        isProgrammaticChange = true;
+        inputTextarea.value = history[historyIndex];
+        isProgrammaticChange = false;
+        updateUnicodeOutput();
+        updateButtons();
+      }
+    }
 
-                inputTextarea.selectionStart = start;
-                inputTextarea.selectionEnd = start + newText.length;
+    function redo() {
+      if (historyIndex < history.length - 1) {
+        historyIndex++;
+        isProgrammaticChange = true;
+        inputTextarea.value = history[historyIndex];
+        isProgrammaticChange = false;
+        updateUnicodeOutput();
+        updateButtons();
+      }
+    }
 
-                saveState();
-                updateUnicodeOutput();
-            }
-        }
+    function updateButtons() {
+      undoButton.disabled = historyIndex <= 0;
+      redoButton.disabled = historyIndex >= history.length - 1;
+    }
 
-        function handleKeyPress(event) {
-            const isCtrlCmd = event.ctrlKey || event.metaKey;
+    function updateUnicodeOutput() {
+      unicodeOutputTextarea.value = inputTextarea.value;
+    }
 
-            if (isCtrlCmd) {
-                let styleType = '';
-                switch (event.key.toUpperCase()) {
-                    case 'B':
-                        styleType = 'bold';
-                        break;
-                    case 'I':
-                        styleType = 'italic';
-                        break;
-                    case 'K':
-                        styleType = 'boldItalic';
-                        break;
-                    case 'Z':
-                        event.preventDefault();
-                        undo();
-                        return;
-                    case 'Y':
-                        event.preventDefault();
-                        redo();
-                        return;
-                }
+    function cleanTextFromUnicodeStyles(text) {
+      let cleaned = '';
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        cleaned += reverseUnicodeMap.has(char) ? reverseUnicodeMap.get(char) : char;
+      }
+      return cleaned;
+    }
 
-                if (styleType) {
-                    event.preventDefault();
-                    applyFormatToSelection(styleType);
-                }
-            }
-        }
+    function applyUnicodeStyle(text, styleType) {
+      let cleanedText = cleanTextFromUnicodeStyles(text);
+      let result = '';
+      for (let i = 0; i < cleanedText.length; i++) {
+        const char = cleanedText[i];
+        result += (unicodeMap[styleType] && unicodeMap[styleType][char]) ? unicodeMap[styleType][char] : char;
+      }
+      return result;
+    }
 
-        function copyToClipboard() {
-            unicodeOutputTextarea.select();
-            unicodeOutputTextarea.setSelectionRange(0, 99999);
-            try {
-                document.execCommand('copy');
-                alert('Düzenlenmiş metin panoya kopyalandı!');
-            } catch (err) {
-                console.error('Kopyalama başarısız oldu:', err);
-                alert('Kopyalama başarısız oldu. Lütfen manuel olarak kopyalayın.');
-            }
-        }
-
+    function applyFormatToSelection(styleType) {
+      const start = inputTextarea.selectionStart;
+      const end = inputTextarea.selectionEnd;
+      let selectedText = inputTextarea.value.substring(start, end);
+      if (selectedText) {
+        const newText = applyUnicodeStyle(selectedText, styleType);
+        const fullText = inputTextarea.value;
+        isProgrammaticChange = true;
+        inputTextarea.value = fullText.substring(0, start) + newText + fullText.substring(end);
+        isProgrammaticChange = false;
+        inputTextarea.selectionStart = start;
+        inputTextarea.selectionEnd = start + newText.length;
         saveState();
         updateUnicodeOutput();
-    </script>
+      }
+    }
+
+    function handleKeyPress(event) {
+      const isCtrlCmd = event.ctrlKey || event.metaKey;
+      if (!isCtrlCmd) return;
+      let styleType = '';
+      switch (event.key.toUpperCase()) {
+        case 'B': styleType = 'bold'; break;
+        case 'I': styleType = 'italic'; break;
+        case 'K': styleType = 'boldItalic'; break;
+        case 'Z': event.preventDefault(); undo(); return;
+        case 'Y': event.preventDefault(); redo(); return;
+      }
+      if (styleType) { event.preventDefault(); applyFormatToSelection(styleType); }
+    }
+
+    async function copyToClipboard() {
+      const text = unicodeOutputTextarea.value;
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          // Fallback
+          unicodeOutputTextarea.select();
+          unicodeOutputTextarea.setSelectionRange(0, 99999);
+          document.execCommand('copy');
+        }
+        ensureToast();
+        if (copyToast) copyToast.show();
+      } catch (err) {
+        alert('Kopyalama başarısız oldu. Lütfen manuel olarak kopyalayın.');
+        console.error('Kopyalama hatası:', err);
+      }
+    }
+
+    // İlk kurulum
+    saveState();
+    updateUnicodeOutput();
+  </script>
 </body>
 
 </html>
