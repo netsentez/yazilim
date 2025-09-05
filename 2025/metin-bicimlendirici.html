@@ -58,6 +58,16 @@
       font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
     }
 
+    /* Sticky aside görseli */
+    .brand-card img {
+      max-width: 72%;
+    }
+
+    /* İsteğe bağlı küçük kozmetik */
+    .ns-toolbar .btn {
+      min-width: 110px;
+    }
+
     /* Ana aksiyon alanı */
     .tool-card textarea.form-control {
       min-height: 260px;
@@ -82,20 +92,11 @@
     .shortcut-info li code {
       font-size: .875rem;
     }
-
-    /* Sticky aside görseli */
-    .brand-card img {
-      max-width: 72%;
-    }
-
-    /* İsteğe bağlı küçük kozmetik */
-    .ns-toolbar .btn {
-      min-width: 110px;
-    }
   </style>
 </head>
 
 <body class="bg-light">
+
   <!-- Üst navigasyon -->
   <div class="container pt-2 pb-2">
     <div class="d-flex align-items-center mt-2">
@@ -194,8 +195,8 @@
       <div class="col-lg-4">
         <div class="sticky-top" style="top: 80px;">
           <div class="text-center mb-4 rounded-3 shadow-sm bg-white p-4 brand-card">
-            <img class="img-fluid rounded-3" src="../images/logo-netsentez.png" alt="netsentez logosu"
-              title="netsentez">
+            <a href="https://netsentez.com/"><img class="img-fluid rounded-3" src="../images/logo-netsentez.png"
+                alt="netsentez logosu" title="netsentez"></a>
           </div>
         </div>
       </div>
