@@ -8,8 +8,7 @@
 
     <!-- 2️⃣ Sayfa başlığı ve açıklama -->
     <title>Yazılım | netsentez</title>
-    <meta name="description"
-        content="Basit web uygulamaları ve araçları. Tanıtımlar, açıklamalar. Veri analizi ve daha fazlası...">
+    <meta name="description" content="Basit web uygulamaları ve araçları. Tanıtımlar, açıklamalar ve daha fazlası...">
     <meta name="keywords"
         content="Html, CSS, JavaScript, Python, R, Excel, Colab, İstatistik, Araştırma, Ölçme ve Değerlendirme, Eğitim, Psikoloji, Kişisel Gelişim">
     <meta name="author" content="Dr. Nizamettin Kaya">
@@ -52,13 +51,22 @@
     <!-- 9️⃣ Özel CSS (kendi stillerim) -->
     <style>
         /* Özel CSS stilleri */
+        :root {
+            --ns-gap: .75rem;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
         }
 
         .my-title {
             letter-spacing: 3px;
             /* Harfler arası boşluk */
+        }
+
+        /* Sticky aside görseli */
+        .brand-card img {
+            max-width: 72%;
         }
 
         @media (max-width: 575.98px) {
@@ -77,30 +85,32 @@
 
 <body class="bg-light">
 
-
+    <!-- Başlık -->
     <header class="shadow-sm pb-5 pt-4 text-light text-center bg-primary">
         <div class="container">
-            <h1 class="display-3 mt-2 my-title">Yazılım</h1>
+            <h1 class="display-3 fw-bold mt-2 my-title">Yazılım</h1>
             <h2 class="h2">netsentez</h2>
-            <h4 class="h4 text-warning mt-4 mb-4">Basit web uygulamaları ve araçları. Tanıtımlar, açıklamalar. Veri
-                analizi
-                ve daha fazlası.</h4>
+            <h4 class="h4 text-warning mt-4 mb-4">Basit web uygulamaları ve araçları. Tanıtımlar, açıklamalar ve daha
+                fazlası.</h4>
             <h4 class="h4">Dr. Nizamettin Kaya</h4>
         </div>
     </header>
-    <div class="bg-white">
-        <div class="container p-0">
+
+    <!-- Google özel arama -->
+    <div class="bg-white border-bottom">
+        <div class="container">
             <script async src="https://cse.google.com/cse.js?cx=009537792171396931332:anbqpbk0wdu"></script>
             <div class="gcse-search"></div>
         </div>
     </div>
 
-    <main class="container mt-3">
-        <div class="row">
+    <!-- İçerik -->
+    <main class="container my-4">
+        <div class="row g-4">
             <div class="col-lg-8">
 
-                <div class="card p-4 rounded-3 shadow-sm bg-white mb-5">
-                    <h2 class="h4 text-primary">Google Colab: Anında Kod Yazmanın Pratik Ortamı</h2>
+                <div class="card p-4 rounded-3 shadow-sm bg-white mb-4">
+                    <h2 class="h2">Google Colab: Anında Kod Yazmanın Pratik Ortamı</h2>
                     <hr class="my-3">
                     <p class="lead">Kurulum derdi olmadan, anında kod yazmaya başlayabileceğiniz, veri bilimi ve makine
                         öğrenimi projelerinizi kolayca hayata geçirebileceğimiz bulut tabanlı bir ortam.</p>
@@ -111,8 +121,8 @@
                     </div>
                 </div>
 
-                <div class="card p-4 rounded-3 shadow-sm bg-white mb-5">
-                    <h2 class="h4 text-primary">Olumlu Telkinler Yağmuru</h2>
+                <div class="card p-4 rounded-3 shadow-sm bg-white mb-4">
+                    <h2 class="h2">Olumlu Telkinler Yağmuru</h2>
                     <hr class="my-3">
                     <p class="lead">Olumlu telkinler (olumlamalar/affirmations) bizi daha mutlu, daha başarılı, daha
                         üretken, daha güvenli,
@@ -126,8 +136,8 @@
                     </div>
                 </div>
 
-                <div class="card p-4 rounded-3 shadow-sm bg-white mb-5">
-                    <h2 class="h4 text-primary">İyimserlik Ölçeği</h2>
+                <div class="card p-4 rounded-3 shadow-sm bg-white mb-4">
+                    <h2 class="h2">İyimserlik Ölçeği</h2>
                     <hr class="my-3">
                     <p class="lead">"<i>İyimserlik/karamsarlık</i>" ve "<i>kabullenicilik/dışlayıcılık</i>"
                         boyutlarında kendinizi değerlendirin. 20 ölçek
@@ -141,8 +151,8 @@
                     </div>
                 </div>
 
-                <div class="card p-4 rounded-3 shadow-sm bg-white mb-5">
-                    <h2 class="h4 text-primary">Facebook Gönderileri için Metin Biçimlendirici</h2>
+                <div class="card p-4 rounded-3 shadow-sm bg-white mb-4">
+                    <h2 class="h2">Facebook Gönderileri için Metin Biçimlendirici</h2>
                     <hr class="my-3">
                     <p class="lead">Koyu, Eğik, Koyu+Eğik biçimlendirici. Metni girin, biçimlendirin, alın, gönderinize
                         yapıştırın, paylaşın.</p>
@@ -154,10 +164,11 @@
                 </div>
 
             </div>
+            <!-- Yan kolon -->
             <div class="col-lg-4">
                 <div class="sticky-top" style="top: 80px;">
-                    <div class="text-center mb-5 rounded-3 shadow-sm bg-white border">
-                        <img class="img-fluid rounded-3 w-75" src="images/logo-netsentez.png" alt="netsentez logosu"
+                    <div class="text-center mb-4 rounded-3 shadow-sm bg-white p-4 brand-card">
+                        <img class="img-fluid rounded-3" src="../images/logo-netsentez.png" alt="netsentez logosu"
                             title="netsentez">
                     </div>
                 </div>
@@ -168,14 +179,14 @@
     <!-- Footer -->
     <footer class="bg-dark text-white py-5 mt-4">
         <div class="container text-center">
-            <p>Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma uygundur.
-                Kaynak
-                kodlarına <a href="https://github.com/netsentez/yazilim"
-                    class="text-warning text-decoration-none">GitHub</a> üzerinden
-                ulaşabilirsiniz.</p>
-            <hr class="my-4">
-            <p><a href="https://netsentez.com/" class="text-warning text-decoration-none">Ana Platform | netsentez</a>
+            <p class="mb-3">Tüm uygulamalar açık kaynak olup, kişisel veya eğitim amaçlı kullanıma uygundur. Kaynak
+                kodlarına
+                <a href="https://github.com/netsentez/yazilim" class="text-warning text-decoration-none">GitHub</a>
+                üzerinden ulaşabilirsiniz.
             </p>
+            <hr class="my-4">
+            <p class="mb-0"><a href="https://netsentez.com/" class="text-warning text-decoration-none">Ana Platform |
+                    netsentez</a></p>
         </div>
     </footer>
 
